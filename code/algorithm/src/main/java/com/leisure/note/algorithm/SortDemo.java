@@ -1,7 +1,11 @@
 package com.leisure.note.algorithm;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author jie.he
@@ -69,6 +73,14 @@ public class SortDemo {
     return arr;
   }
 
+  /**
+   * 1、从第一个元素开始，该元素可以认为已经被排序；
+   * 2、取出下一个元素，在已经排序的元素序列中从后向前扫描；
+   * 3、如果该元素（已排序）大于新元素，将该元素移到下一位置；
+   * 4、重复步骤 3，直到找到已排序的元素小于或者等于新元素的位置；
+   * 5、将新元素插入到该位置后；
+   * 6、重复步骤 2~5。
+   */
   private static int[] insertionSort(int[] arr) {
     for (int i = 1; i < arr.length; i++) {
       int current = arr[i];
@@ -267,6 +279,168 @@ public class SortDemo {
 
   }
 
+  /**
+   * 计数排序(非比较排序，需要占用额外空间).
+   * <p>
+   * 找出数组中的最大值 max、最小值 min；
+   * 创建一个新数组 C，其长度是 max-min+1，其元素默认值都为 0；
+   * 遍历原数组 A 中的元素 A[i]，以 A[i] - min 作为 C 数组的索引，以 A[i] 的值在 A 中元素出现次数作为 C[A[i] - min] 的值；
+   * 对 C 数组变形，新元素的值是该元素与前一个元素值的和，即当 i>1 时 C[i] = C[i] + C[i-1]；
+   * 创建结果数组 R，长度和原始数组一样。
+   * 从后向前遍历原始数组 A 中的元素 A[i]，使用 A[i] 减去最小值 min 作为索引，在计数数组 C 中找到对应的值 C[A[i] - min]，C[A[i] - min] - 1 就是 A[i] 在结果数组 R 中的位置，做完上述这些操作，将 count[A[i] - min] 减小 1。
+   */
+  private static int[] countingSort(int[] arr) {
+    if (arr == null || arr.length < 2) {
+      return arr;
+    }
+    int[] minAndMax = getMinAndMax(arr);
+    int min = minAndMax[0];
+    int max = minAndMax[1];
+    int[] countArr = new int[max - min + 1];
+    for (int i = 0; i < arr.length; i++) {
+      countArr[arr[i] - min] += 1;
+    }
+
+    for (int i = 1; i < countArr.length; i++) {
+      countArr[i] = countArr[i - 1] + countArr[i];
+    }
+
+    int[] result = new int[arr.length];
+    for (int i = 0; i < arr.length; i++) {
+      int idx = countArr[arr[i] - min] - 1;
+      countArr[arr[i] - min] -= 1;
+      result[idx] = arr[i];
+    }
+    return result;
+  }
+
+  private static int[] getMinAndMax(int[] arr) {
+    int min = arr[0];
+    int max = arr[0];
+    for (int i = 1; i < arr.length; i++) {
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    return new int[] {min, max};
+  }
+
+  private static int[] getMinAndMax(List<Integer> arr) {
+    int min = arr.get(0);
+    int max = arr.get(0);
+    for (Integer item : arr) {
+      if (item < min) {
+        min = item;
+      }
+      if (item > max) {
+        max = item;
+      }
+    }
+
+    return new int[] {min, max};
+  }
+
+  /**
+   * 桶排序, 计数排序的升级版.
+   * <p>
+   * 算法步骤：
+   * 设置一个 BucketSize，作为每个桶所能放置多少个不同数值；
+   * 遍历输入数据，并且把数据依次映射到对应的桶里去, 保证桶之间的元素是相对有序的(例如第2个桶中的元素全部是大于第1个桶的，依此类推)；
+   * 对每个非空的桶进行排序，可以使用其它排序方法，也可以递归使用桶排序；
+   * 从非空桶里把排好序的数据拼接起来。
+   */
+  private static List<Integer> bucketSort(List<Integer> arr, int bucketSize) {
+    if (arr == null || arr.size() < 2) {
+      return arr;
+    }
+
+    int[] extremum = getMinAndMax(arr);
+    int min = extremum[0];
+    int max = extremum[1];
+    int bucketCount = (max - min) / bucketSize + 1;
+    List<List<Integer>> buckets = new ArrayList<>();
+    for (int i = 0; i < bucketCount; i++) {
+      buckets.add(new ArrayList<>());
+    }
+
+    for (Integer element : arr) {
+      // 将元素分到桶中，不是取模，是直接除法，保证桶之间是有序的
+      int idx = (element - min) / bucketSize;
+      buckets.get(idx).add(element);
+    }
+
+    for (int i = 0; i < buckets.size(); i++) {
+      if (buckets.get(i).size() >= 2) {
+        buckets.set(i, bucketSort(buckets.get(i), buckets.get(i).size() / 2));
+      }
+    }
+
+    List<Integer> result = new ArrayList<>();
+    for (List<Integer> bucket : buckets) {
+      result.addAll(bucket);
+    }
+    return result;
+  }
+
+  /**
+   * 基数排序, 非比较排序. 实际是对数组中每个元素按从低位到高位进行计数排序(利用计数排序适用于小范围数的特点), 每一位计数排序后的结果覆盖原数组，最高位排序完成后整个数组就是有序的.
+   * <p>
+   * 算法步骤
+   * 取得数组中的最大数，并取得位数，即为迭代次数 $N$（例如：数组中最大数值为 1000，则 $N=4$）；
+   * A 为原始数组，从最低位开始取每个位组成 radix 数组；
+   * 对 radix 进行计数排序（利用计数排序适用于小范围数的特点）；
+   * 将 radix 依次赋值给原数组；重复 2~4 步骤 $N$ 次
+   * <p>
+   *   时间复杂度: O(N*K) k为最大值的位数
+   *   空间复杂度: O(N+K) k为0-9？
+   * </p>
+   */
+  private static int[] radixSort(int[] arr) {
+    if (arr == null || arr.length < 2) {
+      return arr;
+    }
+
+    // 找到最大的元素
+    int max = arr[0];
+    for (int i = 1; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    // 计算最大值的位数
+    int N = 0;
+    while (max > 0) {
+      max = max / 10;
+      N++;
+    }
+
+    // 开始基数排序, 从低位到高位进行计数排序, 每次排序的结果覆盖原数组
+    for (int i = 0; i < N; i++) {
+      List<List<Integer>> radix = new ArrayList<>();
+      // 计数排序数组从0-9, 空间使用较小不用减去最小值
+      for (int j = 0; j < 10; j++) {
+        radix.add(new ArrayList<>());
+      }
+
+      for (int element : arr) {
+        int idx = (element / (int) Math.pow(10, i)) % 10;
+        radix.get(idx).add(element);
+      }
+
+      int idx = 0;
+      for (List<Integer> radixElements : radix) {
+        for (int element : radixElements) {
+          arr[idx++] = element;
+        }
+      }
+    }
+
+    return arr;
+  }
+
   private static void swap(int[] arr, int i, int j) {
     int temp = arr[j];
     arr[j] = arr[i];
@@ -275,8 +449,10 @@ public class SortDemo {
 
   public static void main(String[] args) {
     int[] arr = {10, 66, 39, 26, 58, 36, 37, 41, 77, 2, 59, 3};
-    int[] sortedArr = heapSort(arr);
+    int[] sortedArr = radixSort(arr);
     System.out.println(Arrays.toString(sortedArr));
+//    List<Integer> sortedRes = bucketSort(Arrays.stream(arr).boxed().collect(Collectors.toList()), arr.length / 2);
+//    System.out.println(Arrays.toString(sortedRes.toArray()));
   }
 
 }

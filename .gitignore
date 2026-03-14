@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Java / Maven build outputs
+target/
+*/target/
+**/target/
+out/
+*.class
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
