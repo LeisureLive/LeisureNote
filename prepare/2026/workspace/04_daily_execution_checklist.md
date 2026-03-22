@@ -1,6 +1,6 @@
 # 每日执行清单
 
-用于配合 `prepare/2026/04_xiaomi_java_data_service_1month_plan.md` 使用。
+用于配合 `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md` 使用。
 
 ## 每日固定动作
 

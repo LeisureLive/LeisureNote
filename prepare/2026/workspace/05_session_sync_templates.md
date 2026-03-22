@@ -16,7 +16,7 @@
 适用于按天或按阶段推进学习任务后的日常同步。
 
 ```md
-我在执行 `prepare/2026/04_xiaomi_java_data_service_1month_plan.md`
+我在执行 `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md`
 
 ## 当前进度
 - 当前周次 / 天数：
