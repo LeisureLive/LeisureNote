@@ -193,6 +193,8 @@
 补充要求：
 
 - 算法题引导风格优先对齐 `prepare/2026/tracks/xiaomi_java_data_service/algorithms` 目录中的文档
+- 算法题出题规则优先参考：
+  - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/rules/00_algorithm_problem_rules.md`
 - 优先遵循“先识别题型，再写代码”
 - 每题默认都要覆盖：
   - 题型

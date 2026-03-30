@@ -11,6 +11,10 @@
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/01_arrays.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/02_hashing.md`
 
+训练规则入口：
+
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/rules/00_algorithm_problem_rules.md`
+
 ## 1. 为什么要按专题准备
 
 如果是 Java 后端 / 数据服务岗位，算法准备不建议一上来平均刷题，更适合按“数据结构 / 算法模式”建立知识树。
