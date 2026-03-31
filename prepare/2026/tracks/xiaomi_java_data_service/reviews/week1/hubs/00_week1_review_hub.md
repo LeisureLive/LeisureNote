@@ -21,7 +21,7 @@
 | 模块 | 专题文档 | 对应计划 | 日文档 |
 | --- | --- | --- | --- |
 | 并发 | `topics/01_1_threadpool_lock_system_review.md`、`topics/01_2_jmm_and_lockfree_system_review.md` | Day1-Day2 | 对应 `daily/` 日复盘文档 |
-| JVM | `topics/02_1_jvm_runtime_classloading_system_review.md`、`topics/02_2_jvm_gc_troubleshooting_system_review.md` | Day3-Day4 | Day3 对应 `daily/day3_jvm_memory_classloading_review.md` |
+| JVM | `topics/02_1_jvm_runtime_classloading_system_review.md`、`topics/02_2_jvm_gc_troubleshooting_system_review.md` | Day3-Day4 | Day3 对应 `daily/day3_jvm_memory_classloading_review.md`，Day4 对应 `daily/day4_jvm_gc_troubleshooting_review.md` |
 | MySQL | `topics/03_mysql_system_review.md` | Day5 | 无单独日文档，直接看专题文档 |
 | Redis | `topics/04_redis_system_review.md` | Day6 | 无单独日文档，直接看专题文档 |
 | Kafka | `topics/05_kafka_system_review.md` | Day6 | 无单独日文档，直接看专题文档 |
@@ -33,7 +33,7 @@
 | Day1 | 线程池、锁 | 建立并发控制的资源视角和锁选型视角 | `topics/01_1_threadpool_lock_system_review.md` + `daily/day1_threadpool_lock_review.md` |
 | Day2 | JMM、`volatile`、CAS、AQS、并发容器 | 建立并发语义视角，理解有锁和无锁两类方案 | `topics/01_2_jmm_and_lockfree_system_review.md` + `daily/day2_jmm_cas_aqs_review.md` |
 | Day3 | JVM 内存结构、对象创建、类加载 | 区分 JVM 和 JMM，打通对象创建与类加载主线 | `topics/02_1_jvm_runtime_classloading_system_review.md` + `daily/day3_jvm_memory_classloading_review.md` |
-| Day4 | GC、收集器、线上排障 | 建立 GC、停顿和线上排障的稳定分析链路 | `topics/02_2_jvm_gc_troubleshooting_system_review.md` |
+| Day4 | GC、收集器、线上排障 | 建立 GC、停顿和线上排障的稳定分析链路 | `topics/02_2_jvm_gc_troubleshooting_system_review.md` + `daily/day4_jvm_gc_troubleshooting_review.md` |
 | Day5 | MySQL 索引、事务、MVCC、慢 SQL | 建立 SQL 执行、事务并发和排查思维 | `topics/03_mysql_system_review.md` |
 | Day6 | Redis、Kafka | 建立缓存与消息队列的工程化认知 | `topics/04_redis_system_review.md` + `topics/05_kafka_system_review.md` |
 | Day7 | 周复盘 | 只复盘主线和薄弱点，不回炉全量笔记 | 本文件 + 各专题文档自测清单 |
@@ -123,6 +123,8 @@ Week1 算法不要求刷很多题，而要求你恢复这四件事：
   - 负责 Day2 并发语义和无锁并发的展开
 - `daily/day3_jvm_memory_classloading_review.md`：
   - 负责 Day3 JVM 基础主线的展开
+- `daily/day4_jvm_gc_troubleshooting_review.md`：
+  - 负责 Day4 GC 主线、线上排障和前缀和 + 哈希题型复盘
 
 如果你后面愿意继续细化，最适合的下一步不是再堆“标准答案”，而是继续补：
 
