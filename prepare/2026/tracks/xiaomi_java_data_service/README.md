@@ -18,6 +18,7 @@ xiaomi_java_data_service/
 ├── README.md
 ├── 00_high_frequency_knowledge_map.md
 ├── 01_1month_plan.md
+├── 02_merged_role_requirements_and_prep_focus.md
 ├── algorithms/
 └── reviews/
 ```
@@ -47,6 +48,20 @@ xiaomi_java_data_service/
 它不是专题正文，而是：
 
 - 每天进入专题前的知识导航层
+
+### `02_merged_role_requirements_and_prep_focus.md`
+
+作用：
+
+- 汇总当前已收集的小米相关岗位要求
+- 提炼统一的岗位准备重点
+
+适合先看它，明确：
+
+- 这些岗位真正共同要求什么
+- 哪些是当前主线
+- 哪些只是加分项
+- 后续为什么要调整知识地图和月计划
 
 ### `algorithms/`
 
