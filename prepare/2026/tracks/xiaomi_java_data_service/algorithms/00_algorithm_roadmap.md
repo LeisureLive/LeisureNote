@@ -10,10 +10,21 @@
 
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/01_arrays.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/02_hashing.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/03_linked_list.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/04_stack_queue_monotonic_stack.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/05_strings.md`
 
 训练规则入口：
 
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/rules/00_algorithm_problem_rules.md`
+
+进度与去重索引入口：
+
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/problem_ledger_and_dedup_index.md`
+
+算法专项月计划入口：
+
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/90_1month_algorithm_plan.md`
 
 ## 1. 为什么要按专题准备
 
@@ -100,6 +111,9 @@
 
 - 数组：双指针、滑动窗口、前缀和、前后缀
 - 哈希表：`Set` 存在性判断、`Map` 计数 / 索引映射、前缀和 + 哈希
+- 链表：`dummy node`、快慢指针、反转、合并
+- 栈 / 队列：普通栈、单调栈、单调队列
+- 字符串：滑动窗口、双指针、哈希统计、字符串模拟
 - 树：前中后序、DFS、BFS
 
 ### 第三轮：做面试化输出
@@ -109,6 +123,21 @@
   - 典型信号
   - 常见坑点
   - 代表题
+
+### 每个专题内部默认按三步推进
+
+- 第一步：先做 1-2 道模板题
+  - 目标是识别题型、建立基础写法
+- 第二步：再做 2-3 道高频主战题
+  - 目标是覆盖这个专题最常见、最值得面试展开的问题
+- 第三步：最后做 1 道变体或验收题
+  - 目标是验证自己是不是只会背模板
+
+默认不建议：
+
+- 一个专题里连续刷很多道思路几乎一样的题
+- 只追求题量，不说明每题训练重点
+- 还没讲顺模板题就急着扩展进阶题
 
 ## 6. 当前最适合你的起步顺序
 
@@ -131,25 +160,25 @@
 - `HashMap` 做索引映射、计数统计
 - 前缀和 + 哈希表
 
-### 第三步：再进入链表和树
+### 第三步：再进入链表、栈 / 队列、字符串和树
 
 这时算法感觉会顺很多，因为前两步已经把最基础的表达能力找回来了。
 
-## 7. 后续专题扩展建议
+## 7. 当前专题补充进度
 
-后续可以按同样结构继续补：
+目前已经补出的专题：
 
+- `01_arrays.md`
+- `02_hashing.md`
 - `03_linked_list.md`
 - `04_stack_queue_monotonic_stack.md`
-- `05_binary_tree_dfs_bfs.md`
-- `06_heap_priority_queue.md`
-- `07_binary_search.md`
-- `08_backtracking.md`
-- `09_graph.md`
-- `10_dynamic_programming.md`
+- `05_strings.md`
 
-如果只从面试性价比看，下一篇最值得补的是：
+按当前面试性价比，下一批最值得继续补的是：
 
-1. 链表
-2. 二叉树 + DFS / BFS
-3. 栈 / 队列 / 单调栈
+1. 二叉树 / DFS / BFS
+2. 堆 / 优先队列
+3. 二分查找
+4. 回溯
+5. 图
+6. 动态规划

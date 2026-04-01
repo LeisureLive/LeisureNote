@@ -64,10 +64,11 @@ prepare/2026/
 3. 每次开启新对话前，基于 `prepare/2026/workspace/02_chat_sync_template.md` 贴给 AI
 4. 每次模拟面试或真实面试后，记录到 `prepare/2026/workspace/03_interview_log.md`
 5. 进入 `prepare/2026/tracks/xiaomi_java_data_service/README.md`
-6. 按 `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md` 执行这条 1 个月冲刺计划
-7. 每天先用 `prepare/2026/workspace/04_daily_execution_checklist.md` 做最小执行记录
-8. 再进入 `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/hubs/00_week1_review_hub.md` 看当天要读的专题正文和日复盘
-9. 每次开启新对话或复盘时，按场景使用 `prepare/2026/workspace/05_session_sync_templates.md`
+6. 技术主线按 `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md` 推进
+7. 算法主线按 `prepare/2026/tracks/xiaomi_java_data_service/algorithms/90_1month_algorithm_plan.md` 推进
+8. 每天先用 `prepare/2026/workspace/04_daily_execution_checklist.md` 做最小执行记录
+9. 再进入 `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/hubs/00_week1_review_hub.md` 看当天要读的专题正文和日复盘
+10. 每次开启新对话或复盘时，按场景使用 `prepare/2026/workspace/05_session_sync_templates.md`
 
 建议维护节奏：
 
@@ -77,7 +78,7 @@ prepare/2026/
 - 面试记录：每场模拟/真实面试后更新
 - 每日执行清单：每天更新
 - 专题正文：只在需要补充知识时更新
-- 日复盘：在当天完成问答 / 算法练习后更新
+- 日复盘：在当天完成技术主线或算法专项练习后更新
 
 你也可以后续再按岗位拆分子目录，例如：
 

@@ -1,6 +1,83 @@
 # 每日执行清单
 
-用于配合 `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md` 使用。
+用于配合下面两类计划使用：
+
+- 技术主线：
+  - `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md`
+- 算法专项：
+  - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/90_1month_algorithm_plan.md`
+
+## 当前记录：Week1 Day6
+
+### 今日计划
+
+- 今天计划完成的主题：
+  - Redis、Kafka
+  - 算法：数组 + 哈希综合 2 题
+- 对应专题文档：
+  - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/04_redis_system_review.md`
+  - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/05_kafka_system_review.md`
+- 对应知识地图模块：
+  - Redis
+  - Kafka
+  - 哈希表
+- 今天计划完成的问答：
+  - Redis 为什么快
+  - Kafka 如何保证不丢消息
+- 今天计划完成的算法题：
+  - `1. 两数之和`
+  - `219. 存在重复元素 II`
+- 今天预计投入时间：
+  - 工作日标准时长
+
+### 今日实际完成情况
+
+- 今天实际完成：
+  - Day6 两道算法题都已完成实现
+  - 已把算法进度同步到题目台账
+  - 已提前初始化 Day7 复刷题和 Week2 Day8-Day13 的题目骨架
+- 没完成的内容：
+  - 暂未记录
+- 没完成的原因：
+  - 暂无
+- 今天的完成度：
+  - 高
+
+### 今日最小学习记录
+
+- 今天先扫过的知识框架：
+  - 哈希表补数查找
+  - 固定范围内存在性判断
+- 今天真正讲顺的 1-2 个点：
+  - `1. 两数之和` 的“先查再放”
+  - `219. 存在重复元素 II` 只需要保留最近一次出现下标
+- 今天最卡的 1-2 个点：
+  - 需要继续区分“同属哈希题”与“同一个子模板”的差异
+- 今天的模块掌握度：`B`
+- 我能否用自己的话讲清主线：
+  - 是
+
+### 今日输出记录
+
+- 今天整理的答案提纲：
+  - 两道题的哈希思路和差异
+- 今天补充的案例 / 项目素材：
+  - 无
+- 今天新增的错题 / 薄弱点：
+  - 前缀和 + 哈希仍需复刷
+- 是否需要补详细日复盘：
+  - 否
+
+### 明日衔接
+
+- 明天优先补什么：
+  - `560. 和为 K 的子数组` 复刷
+- 明天优先看的专题文档：
+  - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/02_hashing.md`
+- 是否需要 AI 帮我复盘：
+  - 是
+- 下次对话希望 AI 帮我做什么：
+  - 检查 Day7 复刷题和后续预生成题目的实现
 
 ## 1. 这份文件的定位
 

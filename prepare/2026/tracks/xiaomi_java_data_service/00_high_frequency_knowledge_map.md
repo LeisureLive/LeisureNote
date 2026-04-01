@@ -84,9 +84,9 @@
 
 ### 3.1 基于当前执行位置的推荐顺序
 
-你当前已经执行到 Week1 Day4，即将进入 Day5，所以当前最合理的模块顺序不是推翻重来，而是：
+你当前技术主线已经执行到 Week1 Day6，算法也已独立拆出，所以当前最合理的模块顺序不是推翻重来，而是：
 
-1. 先完成 Week1 剩余的 MySQL、Redis、Kafka。
+1. 先完成 Week1 剩余的技术主线收口和复盘。
 2. 然后立刻切到框架链：
    - Spring
    - Spring Boot / MVC
@@ -105,9 +105,11 @@
 
 这意味着：
 
-- Day1-Day4 不动
-- Day5-Day7 继续做存储和中间件收口
-- Week2-Week4 按新的岗位要求重排
+- Day1-Day6 不动
+- Day7 做技术主线复盘收口
+- Week2-Week4 按新的岗位要求推进技术主线
+- 算法统一改按：
+  - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/90_1month_algorithm_plan.md`
 
 ## 4. 高频知识模块梳理
 

@@ -90,6 +90,12 @@
 - 明天接什么
 - 是否需要进一步补详细日复盘
 
+补充说明：
+
+- 技术主线和算法专项现在可以都通过这份清单做轻量记录
+- 但算法题目的规划、题目台账和去重信息，不放在这里维护，而统一放在：
+  - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/`
+
 它不替代 `reviews/weekN/daily/` 里的详细日复盘。
 
 你可以这样区分：
@@ -129,6 +135,11 @@
    - 需要按场景切模板就看 `05_session_sync_templates.md`
 4. 每天推进时先记 `04_daily_execution_checklist.md`
 5. 每场模拟 / 真实面试后记 `03_interview_log.md`
+
+如果当天主要在做算法，建议额外同步看：
+
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/90_1month_algorithm_plan.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/problem_ledger_and_dedup_index.md`
 
 ## 3. 和 tracks 的边界
 
