@@ -1,13 +1,11 @@
 package com.leisure.note.algorithm.week2.day8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 
 /**
  * 题目：49. 字母异位词分组
@@ -66,58 +64,125 @@ import java.util.Set;
  */
 public class HashGroupingQuestion1 {
 
+  /**
+   * 解法一：排序后字符串做 key。
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>异位词的字符组成相同，排序后一定得到同一个字符串。</li>
+   * <li>所以可以把“排序后的字符串”作为稳定 key。</li>
+   * <li>再用 {@code HashMap<key, List<String>>} 直接分桶。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>最直观，最好理解，也最适合面试第一版回答。</li>
+   * <li>对字符集要求低，放宽到通用字符集时仍然适用。</li>
+   * </ul>
+   *
+   * <p>注意：
+   *
+   * <ul>
+   * <li>这题是分组归类题，不要退化成两两比较。</li>
+   * <li>排序 key 的时间复杂度约为 {@code O(n * k log k)}，其中 {@code k} 是单个字符串长度。</li>
+   * </ul>
+   */
   public List<List<String>> groupAnagrams(String[] strs) {
     if (strs == null || strs.length == 0) {
       return Collections.emptyList();
     }
-    List<Map<Character, Integer>> mapList = new ArrayList<>();
+
+    Map<String, List<String>> groups = new HashMap<>();
     for (String str : strs) {
-      Map<Character, Integer> map = new HashMap<>();
-      for (int i = 0; i < str.length(); i++) {
-        map.put(str.charAt(i), map.getOrDefault(str.charAt(i), 0) + 1);
-      }
-      mapList.add(map);
+      String key = buildSortedKey(str);
+      groups.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
     }
 
-    // 保存已经归类的字符串索引下标
-    Set<Integer> set = new HashSet<>();
-    List<List<String>> result = new ArrayList<>();
-    for (int i = 0; i < mapList.size(); i++) {
-      if (set.contains(i)) {
-        continue;
-      }
-      List<String> list = new ArrayList<>();
-      list.add(strs[i]);
-      Map<Character, Integer> baseMap = mapList.get(i);
-      for (int j = i + 1; j < mapList.size(); j++) {
-        Map<Character, Integer> tempMap = mapList.get(j);
-        if (baseMap.size() != tempMap.size()
-          || !baseMap.keySet().equals(tempMap.keySet())) {
-          continue;
-        }
-        boolean flag = true;
-        for (Character key : baseMap.keySet()) {
-          if (!Objects.equals(tempMap.getOrDefault(key, 0), baseMap.getOrDefault(key, 0))) {
-            flag = false;
-            break;
-          }
-        }
-
-        if (flag) {
-          list.add(strs[j]);
-          set.add(j);
-        }
-      }
-
-      result.add(list);
-    }
-
-    return result;
+    return new ArrayList<>(groups.values());
   }
 
+  /**
+   * 解法二：频次数组签名做 key。
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>如果字符集固定为 26 个小写字母，那么异位词的本质就是 26 个字母的出现次数完全一致。</li>
+   * <li>所以可以先统计频次数组，再把这个频次数组编码成稳定签名。</li>
+   * <li>相同签名的字符串直接放进同一个桶。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>单个字符串构造 key 不需要排序，时间复杂度约为 {@code O(k)}。</li>
+   * <li>更贴近“异位词本质是频次相同”的理解。</li>
+   * </ul>
+   *
+   * <p>缺点：
+   *
+   * <ul>
+   * <li>写法不如排序版直观。</li>
+   * <li>依赖“字符集固定且较小”的前提。</li>
+   * </ul>
+   *
+   * <p>注意：
+   *
+   * <ul>
+   * <li>不能直接把 {@code int[]} 当作 key，因为 Java 数组默认比较的是引用地址。</li>
+   * <li>签名里要加分隔符，例如 {@code #1#11}，避免数字直接拼接产生歧义。</li>
+   * <li>如果题目放宽到通用字符集，这种 26 位数组写法就不再通用了。</li>
+   * </ul>
+   */
+  public List<List<String>> groupAnagramsByCountSignature(String[] strs) {
+    if (strs == null || strs.length == 0) {
+      return Collections.emptyList();
+    }
+
+    Map<String, List<String>> groups = new HashMap<>();
+    for (String str : strs) {
+      String key = buildCountSignatureKey(str);
+      groups.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
+    }
+
+    return new ArrayList<>(groups.values());
+  }
+
+  /**
+   * 排序版 key：
+   *
+   * <p>把字符串排序后转回字符串，同组异位词会得到同一个 key。
+   */
+  private String buildSortedKey(String str) {
+    char[] chars = str.toCharArray();
+    Arrays.sort(chars);
+    return new String(chars);
+  }
+
+  /**
+   * 频次签名版 key：
+   *
+   * <p>默认只适用于小写英文字母。比如 "eat" 和 "tea" 都会得到同一个频次签名。
+   */
+  private String buildCountSignatureKey(String str) {
+    int[] count = new int[26];
+    for (int i = 0; i < str.length(); i++) {
+      count[str.charAt(i) - 'a']++;
+    }
+
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 26; i++) {
+      sb.append('#').append(count[i]);
+    }
+    return sb.toString();
+  }
 
   public static void main(String[] args) {
     HashGroupingQuestion1 hashGroupingQuestion1 = new HashGroupingQuestion1();
-    System.out.println(hashGroupingQuestion1.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+    String[] input = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
+    System.out.println(hashGroupingQuestion1.groupAnagrams(input));
+    System.out.println(hashGroupingQuestion1.groupAnagramsByCountSignature(input));
   }
 }

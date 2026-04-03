@@ -54,15 +54,13 @@ public class HashCountingQuestion1 {
       return false;
     }
 
-    Map<Character, Integer> map1 = new HashMap<>();
-    Map<Character, Integer> map2 = new HashMap<>();
+    int[] arr = new int[26];
     for (int i = 0; i < s.length(); i++) {
-      map1.put(s.charAt(i), map1.getOrDefault(s.charAt(i), 0) + 1);
-      map2.put(t.charAt(i), map2.getOrDefault(t.charAt(i), 0) + 1);
+      arr[s.charAt(i) - 'a']++;
+      arr[t.charAt(i) - 'a']--;
     }
-
-    for (Map.Entry<Character, Integer> entry : map1.entrySet()) {
-      if (!map2.containsKey(entry.getKey()) || !map2.get(entry.getKey()).equals(entry.getValue())) {
+    for (int i = 0; i < 26; i++) {
+      if (arr[i] != 0) {
         return false;
       }
     }
