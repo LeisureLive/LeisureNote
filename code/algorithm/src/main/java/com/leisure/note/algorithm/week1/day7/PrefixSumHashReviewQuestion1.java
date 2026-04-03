@@ -83,6 +83,37 @@ import java.util.Map;
  */
 public class PrefixSumHashReviewQuestion1 {
 
+  /**
+   * 本题在专题中的定位：
+   *
+   * <ul>
+   * <li>哈希专题：前缀和 + 哈希计数</li>
+   * <li>特征：这是一道复刷题，重点是把模板讲顺，而不是只把代码写对</li>
+   * </ul>
+   *
+   * <p>复刷重点：
+   *
+   * <ol>
+   * <li>为什么普通滑动窗口不适用：因为数组里可能有负数，窗口和没有单调性。</li>
+   * <li>为什么查的是 {@code prefixSum - k}：因为区间和 = 当前前缀和 - 历史前缀和。</li>
+   * <li>为什么 map 存的是次数：因为题目在统计“有多少个区间”。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>是前缀和 + 哈希计数的标准模板。</li>
+   * <li>和 `525` 一起复盘时，能帮助区分“计数型”和“最长长度型”前缀和题。</li>
+   * </ul>
+   *
+   * <p>注意：
+   *
+   * <ul>
+   * <li>{@code 0 -> 1} 表示空前缀出现过一次。</li>
+   * <li>这里的 map 存的是“出现次数”，不是位置。</li>
+   * <li>顺序必须是先统计答案，再更新当前前缀和次数。</li>
+   * </ul>
+   */
   public int subarraySum(int[] nums, int k) {
     if (nums == null || nums.length == 0) {
       return 0;
@@ -90,7 +121,7 @@ public class PrefixSumHashReviewQuestion1 {
 
     int count = 0;
     int prefixSum = 0;
-    // 存储前缀和为 N 的 位置个数
+    // 这里存的是“某个前缀和出现过几次”，不是位置。
     Map<Integer, Integer> map = new HashMap<>();
     map.put(0, 1);
     for (int i = 0; i < nums.length; i++) {

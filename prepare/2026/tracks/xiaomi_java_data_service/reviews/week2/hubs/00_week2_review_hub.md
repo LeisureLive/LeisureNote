@@ -47,17 +47,17 @@ Week2 的主线不是“把 Spring 全家桶过一遍”，而是建立一条稳
 
 ## 3. Week2 专题文档入口
 
-| 模块 | 专题文档 | 对应计划 | 日文档 |
+| 模块 | 专题文档 | 对应计划 | 日复盘状态 |
 | --- | --- | --- | --- |
-| Spring 容器 | `topics/01_spring_ioc_container_and_bean_lifecycle_system_review.md` | Day8 | 对应 `daily/` 日复盘文档 |
-| Spring AOP | `topics/02_spring_aop_and_dynamic_proxy_system_review.md` | Day9 | 对应 `daily/` 日复盘文档 |
-| Spring 循环依赖 | `topics/03_spring_circular_dependency_and_three_level_cache_system_review.md` | Day9 | 对应 `daily/` 日复盘文档 |
-| Spring 事务 | `topics/04_spring_transaction_and_transactional_failure_system_review.md` | Day9 | 对应 `daily/` 日复盘文档 |
-| Spring MVC / Java Web | `topics/05_spring_mvc_and_java_web_request_flow_system_review.md` | Day10 | 对应 `daily/` 日复盘文档 |
-| Spring Boot | `topics/06_spring_boot_auto_configuration_and_startup_system_review.md` | Day11 | 对应 `daily/` 日复盘文档 |
-| MyBatis | `topics/07_mybatis_execution_cache_and_paging_system_review.md` | Day12 | 对应 `daily/` 日复盘文档 |
-| RPC / Dubbo / Spring Cloud / gRPC | `topics/08_rpc_dubbo_springcloud_and_grpc_system_review.md` | Day13 | 对应 `daily/` 日复盘文档 |
-| 后端常用设计模式 | `topics/09_backend_design_patterns_for_service_system_review.md` | Day12 穿插 | 视情况补充日复盘 |
+| Spring 容器 | `topics/01_spring_ioc_container_and_bean_lifecycle_system_review.md` | Day8 | 当前无预置日文档，按需补到 `daily/` |
+| Spring AOP | `topics/02_spring_aop_and_dynamic_proxy_system_review.md` | Day9 | 当前无预置日文档，按需补到 `daily/` |
+| Spring 循环依赖 | `topics/03_spring_circular_dependency_and_three_level_cache_system_review.md` | Day9 | 当前无预置日文档，按需补到 `daily/` |
+| Spring 事务 | `topics/04_spring_transaction_and_transactional_failure_system_review.md` | Day9 | 当前无预置日文档，按需补到 `daily/` |
+| Spring MVC / Java Web | `topics/05_spring_mvc_and_java_web_request_flow_system_review.md` | Day10 | 当前无预置日文档，按需补到 `daily/` |
+| Spring Boot | `topics/06_spring_boot_auto_configuration_and_startup_system_review.md` | Day11 | 当前无预置日文档，按需补到 `daily/` |
+| MyBatis | `topics/07_mybatis_execution_cache_and_paging_system_review.md` | Day12 | 当前无预置日文档，按需补到 `daily/` |
+| RPC / Dubbo / Spring Cloud / gRPC | `topics/08_rpc_dubbo_springcloud_and_grpc_system_review.md` | Day13 | 当前无预置日文档，按需补到 `daily/` |
+| 后端常用设计模式 | `topics/09_backend_design_patterns_for_service_system_review.md` | Day12 穿插 | 当前无预置日文档，按需补到 `daily/` |
 
 ## 4. 每日映射
 
@@ -79,7 +79,7 @@ Week2 的主线不是“把 Spring 全家桶过一遍”，而是建立一条稳
 2. 再看当日专题文档的“这一块在解决什么问题”。
 3. 再过知识树，先建立主线，不急着背类名和源码细节。
 4. 再看重点展开，把机制、适用边界和常见失效场景接起来。
-5. 最后做自测、口头输出和最小执行记录。
+5. 最后做自测、口头输出和最小执行记录；如果当天明显暴露薄弱点，再补 `daily/` 日复盘。
 
 ### 5.2 Week2 的重点提醒
 
@@ -131,9 +131,10 @@ Week2 的主线不是“把 Spring 全家桶过一遍”，而是建立一条稳
   - 负责框架链专题知识正文。
 - `daily/*.md`：
   - 负责当天真实问答表现、薄弱点和修正动作。
+  - 当前目录已预留，但默认按需新建，不假定已经有现成日文档。
 
-Week2 更值得优先补的不是“再拉长总纲”，而是：
+当前 Week2 更值得优先做的是：
 
-- 保持 Spring Day9 的三条主线分别成文。
-- 把 MVC、Boot、MyBatis、RPC 继续补成同样结构层级。
-- 让每篇专题都能直接支撑 1 分钟 / 3 分钟口头回答。
+- 基于当天真实口头输出，把明显卡顿的模块补进 `daily/`。
+- 结合真实追问，把最容易讲散的 2-3 个问题补成简短回答提纲。
+- 用本导航 + `topics/*.md` 做周中推进，用 `daily/*.md` 承接真实表现，而不是把复盘内容再塞回导航文档。

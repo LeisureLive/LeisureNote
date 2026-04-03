@@ -76,6 +76,43 @@ import java.util.Arrays;
  */
 public class BinarySearchQuestion1 {
 
+  /**
+   * 本题在专题中的定位：
+   *
+   * <ul>
+   * <li>数组专题：二分查找</li>
+   * <li>特征：有序数组 + 查找边界位置，而不是单次命中即可结束</li>
+   * </ul>
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>分别做两次二分，一次找左边界，一次找右边界。</li>
+   * <li>命中目标值后，左边界继续向左收缩，右边界继续向右收缩。</li>
+   * <li>最后把两次二分的结果组合起来。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>时间复杂度满足 {@code O(log n)} 的要求。</li>
+   * <li>很适合训练“边界二分”和“命中后不立刻返回”的意识。</li>
+   * </ul>
+   *
+   * <p>缺点：
+   *
+   * <ul>
+   * <li>边界和区间定义容易写乱。</li>
+   * <li>如果没有统一二分模板，左右边界很容易一边对一边错。</li>
+   * </ul>
+   *
+   * <p>变体应对：
+   *
+   * <ul>
+   * <li>如果只求第一个大于等于目标的位置，本质上是 lower bound 问题。</li>
+   * <li>如果数组无序，二分查找就不成立，必须先排序或改用别的结构。</li>
+   * </ul>
+   */
   public int[] searchRange(int[] nums, int target) {
     if (nums == null || nums.length == 0) {
       return new int[] {-1, -1};
