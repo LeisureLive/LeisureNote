@@ -1,6 +1,13 @@
 package com.leisure.note.algorithm.week2.day8;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * 题目：49. 字母异位词分组
@@ -60,6 +67,57 @@ import java.util.List;
 public class HashGroupingQuestion1 {
 
   public List<List<String>> groupAnagrams(String[] strs) {
-    throw new UnsupportedOperationException("TODO: implement groupAnagrams");
+    if (strs == null || strs.length == 0) {
+      return Collections.emptyList();
+    }
+    List<Map<Character, Integer>> mapList = new ArrayList<>();
+    for (String str : strs) {
+      Map<Character, Integer> map = new HashMap<>();
+      for (int i = 0; i < str.length(); i++) {
+        map.put(str.charAt(i), map.getOrDefault(str.charAt(i), 0) + 1);
+      }
+      mapList.add(map);
+    }
+
+    // 保存已经归类的字符串索引下标
+    Set<Integer> set = new HashSet<>();
+    List<List<String>> result = new ArrayList<>();
+    for (int i = 0; i < mapList.size(); i++) {
+      if (set.contains(i)) {
+        continue;
+      }
+      List<String> list = new ArrayList<>();
+      list.add(strs[i]);
+      Map<Character, Integer> baseMap = mapList.get(i);
+      for (int j = i + 1; j < mapList.size(); j++) {
+        Map<Character, Integer> tempMap = mapList.get(j);
+        if (baseMap.size() != tempMap.size()
+          || !baseMap.keySet().equals(tempMap.keySet())) {
+          continue;
+        }
+        boolean flag = true;
+        for (Character key : baseMap.keySet()) {
+          if (!Objects.equals(tempMap.getOrDefault(key, 0), baseMap.getOrDefault(key, 0))) {
+            flag = false;
+            break;
+          }
+        }
+
+        if (flag) {
+          list.add(strs[j]);
+          set.add(j);
+        }
+      }
+
+      result.add(list);
+    }
+
+    return result;
+  }
+
+
+  public static void main(String[] args) {
+    HashGroupingQuestion1 hashGroupingQuestion1 = new HashGroupingQuestion1();
+    System.out.println(hashGroupingQuestion1.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
   }
 }

@@ -1,5 +1,8 @@
 package com.leisure.note.algorithm.week2.day8;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 题目：242. 有效的字母异位词
  *
@@ -44,6 +47,30 @@ package com.leisure.note.algorithm.week2.day8;
 public class HashCountingQuestion1 {
 
   public boolean isAnagram(String s, String t) {
-    throw new UnsupportedOperationException("TODO: implement isAnagram");
+    if (s == null || t == null) {
+      return false;
+    }
+    if (s.length() != t.length()) {
+      return false;
+    }
+
+    Map<Character, Integer> map1 = new HashMap<>();
+    Map<Character, Integer> map2 = new HashMap<>();
+    for (int i = 0; i < s.length(); i++) {
+      map1.put(s.charAt(i), map1.getOrDefault(s.charAt(i), 0) + 1);
+      map2.put(t.charAt(i), map2.getOrDefault(t.charAt(i), 0) + 1);
+    }
+
+    for (Map.Entry<Character, Integer> entry : map1.entrySet()) {
+      if (!map2.containsKey(entry.getKey()) || !map2.get(entry.getKey()).equals(entry.getValue())) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public static void main(String[] args) {
+    HashCountingQuestion1 hashCountingQuestion1 = new HashCountingQuestion1();
+    System.out.println(hashCountingQuestion1.isAnagram("anagram", "nagaram"));
   }
 }

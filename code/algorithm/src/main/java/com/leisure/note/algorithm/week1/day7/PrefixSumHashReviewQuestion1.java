@@ -1,5 +1,8 @@
 package com.leisure.note.algorithm.week1.day7;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 题目：560. 和为 K 的子数组（Day7 复刷题）
  *
@@ -81,6 +84,28 @@ package com.leisure.note.algorithm.week1.day7;
 public class PrefixSumHashReviewQuestion1 {
 
   public int subarraySum(int[] nums, int k) {
-    throw new UnsupportedOperationException("TODO: implement subarraySum");
+    if (nums == null || nums.length == 0) {
+      return 0;
+    }
+
+    int count = 0;
+    int prefixSum = 0;
+    // 存储前缀和为 N 的 位置个数
+    Map<Integer, Integer> map = new HashMap<>();
+    map.put(0, 1);
+    for (int i = 0; i < nums.length; i++) {
+      prefixSum += nums[i];
+      int target = prefixSum - k;
+      count += map.getOrDefault(target, 0);
+      map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
+    }
+
+    return count;
   }
+
+  public static void main(String[] args) {
+    PrefixSumHashReviewQuestion1 test = new PrefixSumHashReviewQuestion1();
+    System.out.println(test.subarraySum(new int[] {1, 1, 1, 1}, 2));
+  }
+
 }
