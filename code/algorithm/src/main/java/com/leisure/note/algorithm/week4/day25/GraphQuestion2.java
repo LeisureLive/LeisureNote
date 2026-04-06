@@ -16,6 +16,30 @@ import java.util.List;
  * public int ladderLength(String beginWord, String endWord, List<String> wordList)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
+ * 输出：5
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
+ * 输出：0
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>每次转换只能改变一个字符，且转换后的单词必须在 {@code wordList} 中</li>
+ * <li>目标是最短转换序列长度，因此优先考虑 BFS</li>
+ * <li>如果 {@code endWord} 不在字典中，直接返回 {@code 0}</li>
+ * <li>允许使用额外空间，例如队列和访问标记集合</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week3.day17;
  * public int diameterOfBinaryTree(TreeNode root)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：root = [1,2,3,4,5]
+ * 输出：3
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：root = [1,2]
+ * 输出：1
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>目标时间复杂度为 {@code O(n)}</li>
+ * <li>树的直径长度按路径上的边数计算</li>
+ * <li>直径不一定经过根节点</li>
+ * <li>需要区分“递归返回给父节点的信息”和“全局最优答案”</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

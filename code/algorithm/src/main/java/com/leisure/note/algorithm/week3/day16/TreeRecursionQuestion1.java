@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week3.day16;
  * public TreeNode invertTree(TreeNode root)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：root = [4,2,7,1,3,6,9]
+ * 输出：[4,7,2,9,6,3,1]
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：root = []
+ * 输出：[]
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>目标时间复杂度为 {@code O(n)}</li>
+ * <li>允许原地修改二叉树指针</li>
+ * <li>返回翻转后的根节点</li>
+ * <li>空树时直接返回 {@code null}</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

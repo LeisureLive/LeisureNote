@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week4.day26;
  * public int climbStairs(int n)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：n = 2
+ * 输出：2
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：n = 3
+ * 输出：3
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>目标时间复杂度为 {@code O(n)}</li>
+ * <li>可以使用 {@code O(n)} 或优化到 {@code O(1)} 的额外空间</li>
+ * <li>{@code n} 为正整数</li>
+ * <li>关键是明确状态定义、转移关系和初始化，而不是直接背斐波那契结论</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

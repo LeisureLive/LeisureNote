@@ -1,6 +1,6 @@
 # 算法已做题台账与去重索引
 
-最后更新：`2026-04-01`
+最后更新：`2026-04-06`
 
 ## 1. 这份文档解决什么问题
 
@@ -20,6 +20,8 @@
 
 - `已完成`
   - 已经有本地实现，且可以视为已经实际练过
+- `已完成（复刷）`
+  - 这题此前已经做过，并且已按当前计划再次完成复刷
 - `已初始化待做`
   - 已经建好题目骨架，但还没有完成实现
 - `计划复刷`
@@ -32,10 +34,10 @@
 | 专题 | 已完成 | 待做 / 复刷 | 当前说明 |
 | --- | --- | --- | --- |
 | 数组 | 5 | 0 | 双指针、滑动窗口、前后缀已有覆盖 |
-| 哈希表 | 5 | 4 | 补数查找、窗口内存在性已补齐，前缀和 + 哈希待复刷，分组归类和哈希统计已预生成 |
-| 链表 | 0 | 5 | Week2-Week3 已预生成基础题、快慢指针和堆结合链表题 |
-| 栈 / 队列 / 单调栈 | 0 | 4 | Week2 已预生成基础栈题和单调栈题 |
-| 字符串 | 1 | 5 | 已覆盖基础滑动窗口，分组归类、统计、模拟和窗口进阶已预生成 |
+| 哈希表 | 7 | 1 | 补数查找、前缀和、分组归类和哈希统计已覆盖，剩余哈希 + 堆待补 |
+| 链表 | 4 | 1 | 原地反转、`dummy node` 拼接、快慢指针已覆盖，剩余堆结合链表待补 |
+| 栈 / 队列 / 单调栈 | 2 | 2 | 基础栈和辅助状态栈已覆盖，单调栈主线待补 |
+| 字符串 | 3 | 3 | 已覆盖基础滑动窗口、分组归类和计数统计，模拟与窗口进阶待补 |
 | 二分查找 | 1 | 2 | 已覆盖边界二分，标准变体与答案二分待补 |
 | 二叉树 / DFS / BFS | 0 | 6 | Week3 已预生成树遍历、递归、后序 DFS 题 |
 | 堆 / 优先队列 | 0 | 3 | Week3 已预生成 TopK、哈希 + 堆、堆和链表结合题 |
@@ -63,20 +65,28 @@
 | `34` | 在排序数组中查找元素的第一个和最后一个位置 | 二分查找 | 边界二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week1/day5/BinarySearchQuestion1.java` |
 | `1` | 两数之和 | 哈希表 | 补数查找 + `HashMap` | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week1/day6/ArrayHashQuestion1.java` |
 | `219` | 存在重复元素 II | 数组 / 哈希表 | 固定范围内存在性判断 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week1/day6/ArrayHashQuestion2.java` |
+| `49` | 字母异位词分组 | 哈希表 / 字符串 | 分组归类 + 稳定 key | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day8/HashGroupingQuestion1.java` |
+| `242` | 有效的字母异位词 | 哈希表 / 字符串 | 计数统计 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day8/HashCountingQuestion1.java` |
+| `206` | 反转链表 | 链表 | 原地反转 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day9/LinkedListQuestion1.java` |
+| `21` | 合并两个有序链表 | 链表 | `dummy node` + 拼接 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day9/LinkedListQuestion2.java` |
+| `141` | 环形链表 | 链表 | 快慢指针判环 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion1.java` |
+| `19` | 删除链表的倒数第 N 个结点 | 链表 | 快慢指针 + `dummy node` | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion2.java` |
+| `20` | 有效的括号 | 栈 | 普通栈匹配 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion1.java` |
+| `155` | 最小栈 | 栈 | 辅助状态栈 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion2.java` |
 
-## 5. 当前待做 / 复刷题目
+## 5. 当前阶段题目进度
 
 | Day | 题号 | 题目 | 归属专题 | 核心模式 | 状态 | 代码文件 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Day7 | `560` | 和为 K 的子数组 | 哈希表 / 前缀和 | 前缀和 + 哈希计数 | 计划复刷 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week1/day7/PrefixSumHashReviewQuestion1.java` |
-| Day8 | `49` | 字母异位词分组 | 哈希表 / 字符串 | 分组归类 + 稳定 key | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day8/HashGroupingQuestion1.java` |
-| Day8 | `242` | 有效的字母异位词 | 哈希表 / 字符串 | 计数统计 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day8/HashCountingQuestion1.java` |
-| Day9 | `206` | 反转链表 | 链表 | 原地反转 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day9/LinkedListQuestion1.java` |
-| Day9 | `21` | 合并两个有序链表 | 链表 | `dummy node` + 拼接 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day9/LinkedListQuestion2.java` |
-| Day10 | `141` | 环形链表 | 链表 | 快慢指针判环 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion1.java` |
-| Day10 | `19` | 删除链表的倒数第 N 个结点 | 链表 | 快慢指针 + `dummy node` | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion2.java` |
-| Day11 | `20` | 有效的括号 | 栈 | 普通栈匹配 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion1.java` |
-| Day11 | `155` | 最小栈 | 栈 | 辅助状态栈 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion2.java` |
+| Day7 | `560` | 和为 K 的子数组 | 哈希表 / 前缀和 | 前缀和 + 哈希计数 | 已完成（复刷） | `code/algorithm/src/main/java/com/leisure/note/algorithm/week1/day7/PrefixSumHashReviewQuestion1.java` |
+| Day8 | `49` | 字母异位词分组 | 哈希表 / 字符串 | 分组归类 + 稳定 key | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day8/HashGroupingQuestion1.java` |
+| Day8 | `242` | 有效的字母异位词 | 哈希表 / 字符串 | 计数统计 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day8/HashCountingQuestion1.java` |
+| Day9 | `206` | 反转链表 | 链表 | 原地反转 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day9/LinkedListQuestion1.java` |
+| Day9 | `21` | 合并两个有序链表 | 链表 | `dummy node` + 拼接 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day9/LinkedListQuestion2.java` |
+| Day10 | `141` | 环形链表 | 链表 | 快慢指针判环 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion1.java` |
+| Day10 | `19` | 删除链表的倒数第 N 个结点 | 链表 | 快慢指针 + `dummy node` | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion2.java` |
+| Day11 | `20` | 有效的括号 | 栈 | 普通栈匹配 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion1.java` |
+| Day11 | `155` | 最小栈 | 栈 | 辅助状态栈 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion2.java` |
 | Day12 | `739` | 每日温度 | 单调栈 | 最近更大元素 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion1.java` |
 | Day12 | `496` | 下一个更大元素 I | 单调栈 | 最近更大元素 + 哈希映射 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion2.java` |
 | Day13 | `33` | 搜索旋转排序数组 | 二分查找 | 变体二分 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion1.java` |
@@ -210,9 +220,12 @@
     - 与 `219` 高度同构的基础存在性判断题
 
 - `HashMap` 分组归类
-  - 已覆盖题：无
-  - 当前状态：
-    - `49` 更适合放到后续哈希计数 / 分组阶段再做
+  - 已覆盖题：`49`
+  - 已掌握内容：
+    - 用稳定 key 做分桶
+    - 排序 key 和计数签名 key 的取舍
+  - 近期不优先再出：
+    - 与 `49` 高度同构的基础分组归类题
 
 ### 6.5 二分查找
 
@@ -225,35 +238,99 @@
   - 后续更适合补：
     - `875` 这类答案空间二分
 
+### 6.6 链表
+
+- `原地反转`
+  - 已覆盖题：`206`
+  - 已掌握内容：
+    - `prev-cur-next` 三指针推进
+    - 改指针前先保存旧的 `next`
+  - 近期不优先再出：
+    - 纯同构的基础反转链表题
+  - 后续更适合补：
+    - 把反转模板和快慢指针、链表拼接题串起来讲
+
+- `dummy node` + 拼接
+  - 已覆盖题：`21`
+  - 已掌握内容：
+    - 用哑节点统一处理头节点
+    - 结果链表尾指针如何稳定推进
+  - 近期不优先再出：
+    - 纯基础的两个有序链表合并题
+  - 后续更适合补：
+    - `19`
+    - `23`
+
+- `快慢指针判环`
+  - 已覆盖题：`141`
+  - 已掌握内容：
+    - `slow` 一次一步、`fast` 一次两步
+    - 为什么有环时快慢指针最终会在环内相遇
+  - 近期不优先再出：
+    - 纯基础的链表判环题
+  - 后续更适合补：
+    - 找环入口、环长度这类快慢指针进阶题
+
+- `快慢指针 + dummy node`
+  - 已覆盖题：`19`
+  - 已掌握内容：
+    - 先制造固定间距再同步前进
+    - 删除倒数第 `n` 个节点时本质上是在找前驱
+  - 近期不优先再出：
+    - 纯同构的倒数第 `k` 个节点删除题
+  - 后续更适合补：
+    - `23`
+
+### 6.7 栈 / 队列 / 单调栈
+
+- `普通栈匹配`
+  - 已覆盖题：`20`
+  - 已掌握内容：
+    - 栈里保存“最近未匹配的左括号”
+    - 右括号来了只能检查栈顶
+  - 近期不优先再出：
+    - 与 `20` 高度同构的基础括号匹配题
+  - 后续更适合补：
+    - 需要同时维护额外状态的栈题
+
+- `辅助状态栈`
+  - 已覆盖题：`155`
+  - 已掌握内容：
+    - 普通栈之外，还要同步维护“到当前为止的最小值”
+    - 单栈节点扩展法如何做到 `getMin()` 为 `O(1)`
+  - 近期不优先再出：
+    - 纯同构的最小栈题
+  - 后续更适合补：
+    - `739`
+    - `496`
+
 ## 7. 当前最适合的出题优先池
 
 如果后续按“当前进度 + 避免重复”继续出题，优先级建议如下：
 
 ### P0：立刻可做
 
-1. `560. 和为 K 的子数组`
+1. `739. 每日温度`
    - 原因：
-     - 这是 Day7 计划里“重做错题或薄弱题 1 题”的最合适选择
-     - Day4 复盘里，这题是前缀和 + 哈希里更基础、也更薄弱的模板题
+     - 这是 Day12 的主做题
+     - 可以正式切到单调栈模板
+2. `496. 下一个更大元素 I`
+   - 原因：
+     - 这是 Day12 的加练题
+     - 能把“最近更大元素”模式再练一遍
 
 ### P1：下一轮适合补
 
-1. `49. 字母异位词分组`
+1. `33. 搜索旋转排序数组`
    - 原因：
-     - 更贴合后续“哈希计数 / 分组”阶段
-2. `438. 找到字符串中所有字母异位词`
+     - 适合作为 Day13 的变体二分主战题
+2. `875. 爱吃香蕉的珂珂`
    - 原因：
-     - 可以接在 `3` 之后，补“固定长度窗口”
-3. `26. 删除有序数组中的重复项`
-   - 原因：
-     - 可以补齐数组专题里“原地双指针模板”
-4. `42. 接雨水`
-   - 原因：
-     - 能串起数组、双指针、前后缀、单调栈多个专题
+     - 可以补答案空间二分
 
 ### P2：暂不优先
 
-- 与 `167`、`11`、`3`、`209`、`560`、`525` 核心思路高度相似的基础模板题
+- 与 `49`、`242`、`206`、`21`、`141`、`19`、`20`、`155` 核心思路高度相似的基础模板题
 - 纯重复刷已经完成的题号
 
 ## 8. 后续使用规则

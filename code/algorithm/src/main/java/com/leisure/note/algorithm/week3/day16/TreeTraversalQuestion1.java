@@ -15,6 +15,30 @@ import java.util.List;
  * public List<Integer> inorderTraversal(TreeNode root)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：root = [1,null,2,3]
+ * 输出：[1,3,2]
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：root = []
+ * 输出：[]
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>允许使用递归或显式栈实现</li>
+ * <li>目标时间复杂度为 {@code O(n)}</li>
+ * <li>返回顺序必须是“左子树 -> 根节点 -> 右子树”</li>
+ * <li>空树时返回空列表，不要返回 {@code null}</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

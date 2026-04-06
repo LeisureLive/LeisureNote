@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week3.day20;
  * public String minWindow(String s, String t)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：s = "ADOBECODEBANC", t = "ABC"
+ * 输出："BANC"
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：s = "a", t = "aa"
+ * 输出：""
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>如果不存在覆盖 {@code t} 所有字符的子串，返回空字符串 {@code ""}</li>
+ * <li>要考虑 {@code t} 中字符的重复次数，而不只是字符是否出现过</li>
+ * <li>目标思路是滑动窗口，复杂度尽量做到 {@code O(|s| + |t|)}</li>
+ * <li>允许使用额外空间，例如哈希表统计字符需求和窗口状态</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

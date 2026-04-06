@@ -76,7 +76,7 @@
 | MyBatis | P0 | `L2` | Day 12 / Day 23 | 框架链必须拿稳 |
 | Dubbo / Spring Cloud / RPC | P0 | `L2` | Day 13 / Day 23 | 分布式链路必须拿稳 |
 | 系统设计 / 数据服务 / 分布式基础 | P0 | `L2-L3` | Day 15-21 / Day 25 | 资深岗关键 |
-| 数据平台 / 大数据引擎 | P1 | `L1-L2` | Week3-4 穿插 | 数据平台岗相关 |
+| 数据平台 / 大数据开发 | P0 | `L2` | Week2-4 穿插 | 当前额外强化 |
 | 设计模式 / 工程能力 | P1 | `L1-L2` | Week2-4 穿插 | JD 显式要求 |
 | 排障 / 性能优化 / Linux / 网络 / Java Web | P1 | `L1-L2` | Day 4 / Day 26 | 明显岗位要求 |
 | 项目表达 / 行为面 | P2 | `L2` | Week3-4 穿插 | 后续逐步补强 |
@@ -100,7 +100,13 @@
    - MQ
    - 负载均衡
    - 分布式事务
-4. 再补数据平台 / 大数据引擎和多数据库 / 多引擎选型。
+4. 再补数据平台 / 大数据开发和多数据库 / 多引擎选型：
+   - Flink
+   - Spark
+   - HDFS
+   - Hive
+   - Impala
+   - Presto / Doris / Holo / ElasticSearch
 5. 最后做项目表达、排障案例和综合模拟。
 
 这意味着：
@@ -546,13 +552,37 @@
 - 1 个线上排查案例模板
 - 2 个真实性能优化案例提纲
 
-### 4.12 数据平台 / 大数据引擎
+### 4.12 数据平台 / 大数据开发
 
 #### 核心框架
 
 - 数据平台与业务系统的边界
 - 批处理与流处理
-- Flink / Spark 的角色差异
+- 一条典型数据链路：
+  - Kafka
+  - Flink
+  - HDFS / Hive
+  - Impala / Presto / Doris / Holo
+  - ElasticSearch
+- Flink：
+  - JobManager / TaskManager
+  - state
+  - checkpoint / savepoint
+  - event time / watermark
+  - backpressure
+- Spark：
+  - Driver / Executor
+  - DAG / Stage / Task
+  - wide / narrow dependency
+  - shuffle
+  - cache / persist
+  - data skew
+- HDFS / Hive / Impala：
+  - NameNode / DataNode / block / replica
+  - 读写流程
+  - 小文件问题
+  - Hive 的 metastore / partition / file format
+  - Impala 的 MPP 查询定位
 - Hadoop / Presto / Doris / Holo / ElasticSearch 的使用场景
 - 数据开发平台 / 数据工场的典型能力：
   - 任务开发
@@ -565,13 +595,25 @@
 
 - 数据服务系统和数据平台系统的区别是什么
 - Flink 和 Spark 各自更适合什么场景
-- Kafka、Flink、Doris / Holo 在一条典型数据链路里怎么配合
+- Flink 为什么适合实时处理，checkpoint 怎么帮助容错
+- watermark 和 processing time 的区别是什么
+- backpressure 在 Flink 里怎么理解，常见原因是什么
+- Spark 的 DAG / Stage / Task 是怎么拆出来的
+- wide dependency 和 shuffle 为什么会拉高成本
+- HDFS 的读写流程是什么，小文件为什么麻烦
+- Hive、Impala、Presto、Doris 分别适合什么查询场景
+- Kafka、Flink、HDFS / Hive、Impala / Doris 在一条典型数据链路里怎么配合
 - 为什么数据开发平台要做平台化，而不是让业务方直接写脚本
 - 数据平台里最关键的元数据、调度、监控、权限问题分别是什么
 
 #### 常见追问
 
 - 实时链路和离线链路的边界怎么划
+- checkpoint 和 savepoint 的区别
+- Flink 的 exactly-once 依赖哪些前提
+- Spark 数据倾斜怎么识别和处理
+- Parquet / ORC 这类列式格式为什么更适合分析场景
+- Hive 和 Impala 为什么经常一起出现，但定位不同
 - Presto / Doris / Holo 这类查询引擎为什么适合分析场景
 - 数据平台为什么容易被问“可扩展性”和“多租户隔离”
 - 如果让你做一站式数据开发平台，你会先抽象哪些能力
@@ -580,12 +622,16 @@
 
 - 你已经有数据平台背景，但要把“做过”升级成“平台化设计表达”
 - 不要只讲技术栈名词，要能说明每个组件在链路里的角色
+- Flink / Spark 不能只答“一个偏流一个偏批”，还要能讲运行模型、成本和调优方向
+- HDFS / Hive / Impala 不能只答定义，要能讲存储、查询和工程边界
 - 要会把实时订阅、实时查询、数据开发平台这几类场景区分开
 
 #### 推荐输出物
 
 - “数据平台核心能力地图”提纲
-- “Flink / Kafka / Doris 在典型链路中的分工”回答提纲
+- “Flink / Kafka / HDFS / Hive / Impala / Doris 在典型链路中的分工”回答提纲
+- “Flink 和 Spark 的差异与选型”回答提纲
+- “Hive / Impala / Presto / Doris 查询场景边界”对比表
 
 ### 4.13 设计模式 / 工程能力
 

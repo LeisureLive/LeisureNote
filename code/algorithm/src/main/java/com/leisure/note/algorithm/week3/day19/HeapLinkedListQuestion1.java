@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week3.day19;
  * public ListNode mergeKLists(ListNode[] lists)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：lists = [[1,4,5],[1,3,4],[2,6]]
+ * 输出：[1,1,2,3,4,4,5,6]
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：lists = []
+ * 输出：[]
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>目标思路是优先队列，整体复杂度尽量做到 {@code O(N log k)}，其中 {@code N} 是总节点数</li>
+ * <li>允许使用额外空间，例如最小堆</li>
+ * <li>输入中的某些链表可能为空</li>
+ * <li>返回的是合并后的新链表头节点；如果所有链表都为空，返回 {@code null}</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

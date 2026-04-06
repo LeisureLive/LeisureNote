@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week3.day17;
  * public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+ * 输出：3
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+ * 输出：5
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>默认 {@code p} 和 {@code q} 都存在于二叉树中</li>
+ * <li>目标时间复杂度为 {@code O(n)}</li>
+ * <li>如果一个节点本身就是另一个节点的祖先，那么它也可能是最近公共祖先</li>
+ * <li>返回的是节点引用，而不是节点值</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

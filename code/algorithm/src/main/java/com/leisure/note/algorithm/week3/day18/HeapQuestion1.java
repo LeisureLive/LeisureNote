@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week3.day18;
  * public int findKthLargest(int[] nums, int k)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：nums = [3,2,1,5,6,4], k = 2
+ * 输出：5
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：nums = [3,2,3,1,2,4,5,5,6], k = 4
+ * 输出：4
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>目标思路是维护大小为 {@code k} 的小顶堆，复杂度尽量做到 {@code O(n log k)}</li>
+ * <li>返回的是第 {@code k} 个最大的元素，不是第 {@code k} 个不同的元素</li>
+ * <li>允许使用额外空间，例如优先队列</li>
+ * <li>不要先整体排序再取第 {@code k} 个作为唯一思路</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

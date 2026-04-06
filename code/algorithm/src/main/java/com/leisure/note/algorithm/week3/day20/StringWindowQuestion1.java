@@ -15,6 +15,30 @@ import java.util.List;
  * public List<Integer> findAnagrams(String s, String p)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：s = "cbaebabacd", p = "abc"
+ * 输出：[0,6]
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：s = "abab", p = "ab"
+ * 输出：[0,1,2]
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>目标时间复杂度尽量做到 {@code O(n)}</li>
+ * <li>允许使用额外空间，例如频次数组或哈希表</li>
+ * <li>窗口长度固定为 {@code p.length()}</li>
+ * <li>返回的是所有异位词子串的起始下标，按出现顺序输出</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

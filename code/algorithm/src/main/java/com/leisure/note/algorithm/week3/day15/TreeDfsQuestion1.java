@@ -13,6 +13,30 @@ package com.leisure.note.algorithm.week3.day15;
  * public int maxDepth(TreeNode root)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：root = [3,9,20,null,null,15,7]
+ * 输出：3
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：root = [1,null,2]
+ * 输出：2
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>目标时间复杂度为 {@code O(n)}</li>
+ * <li>允许使用递归或显式栈</li>
+ * <li>空树的最大深度定义为 {@code 0}</li>
+ * <li>返回的是从根节点到最深叶子节点的节点数，不是边数</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>

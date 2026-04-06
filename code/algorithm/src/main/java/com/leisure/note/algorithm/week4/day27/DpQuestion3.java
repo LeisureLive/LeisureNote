@@ -14,6 +14,30 @@ package com.leisure.note.algorithm.week4.day27;
  * public int coinChange(int[] coins, int amount)
  * </pre>
  *
+ *
+ * <p>示例 1：
+ *
+ * <pre>
+ * 输入：coins = [1,2,5], amount = 11
+ * 输出：3
+ * </pre>
+ *
+ * <p>示例 2：
+ *
+ * <pre>
+ * 输入：coins = [2], amount = 3
+ * 输出：-1
+ * </pre>
+ *
+ * <p>额外要求：
+ *
+ * <ul>
+ * <li>每种硬币数量无限</li>
+ * <li>目标思路是完全背包 / 动态规划，复杂度尽量做到 {@code O(amount * coins.length)}</li>
+ * <li>如果无法凑出总金额，返回 {@code -1}</li>
+ * <li>关键边界是不可达状态的初始化和转移时的越界判断</li>
+ * </ul>
+ *
  * <p>答题重点：
  *
  * <ul>
