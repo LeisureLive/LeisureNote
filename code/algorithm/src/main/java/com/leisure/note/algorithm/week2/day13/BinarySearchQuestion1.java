@@ -47,7 +47,65 @@ package com.leisure.note.algorithm.week2.day13;
  */
 public class BinarySearchQuestion1 {
 
+  /**
+   * 本题在专题中的定位：
+   *
+   * <ul>
+   * <li>二分专题：变体二分</li>
+   * <li>核心信号：整体不是完全有序，但每次二分后一定有一半区间仍然有序</li>
+   * <li>关键判断是“哪一半有序”以及“目标值是否落在这半边”</li>
+   * </ul>
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>每次取中点 {@code mid}，如果直接命中目标值就返回。</li>
+   * <li>先判断左半边 {@code [left, mid]} 是否有序：如果 {@code nums[left] <= nums[mid]}，说明左半边有序。</li>
+   * <li>若左半边有序，再判断目标值是否落在 {@code [nums[left], nums[mid])} 范围内；如果是，就继续去左边，否则去右边。</li>
+   * <li>如果左半边无序，那右半边一定有序；同理判断目标值是否落在右半边有序区间里。</li>
+   * </ol>
+   *
+   * <p>易错点：
+   *
+   * <ul>
+   * <li>右半边有序时，区间判断要写成 {@code nums[mid] < target && target <= nums[right]}，方向很容易写反。</li>
+   * <li>这题默认数组元素互不相同，所以用 {@code nums[left] <= nums[mid]} 判断左半边有序是成立的。</li>
+   * <li>二分边界仍然要用标准模板维护：命中即返回，否则只保留可能包含答案的一侧。</li>
+   * </ul>
+   */
   public int search(int[] nums, int target) {
-    throw new UnsupportedOperationException("TODO: implement search");
+    if (nums == null || nums.length == 0) {
+      return -1;
+    }
+
+    int left = 0;
+    int right = nums.length - 1;
+    while (left <= right) {
+      int mid = left + (right - left) / 2;
+      if (nums[mid] == target) {
+        return mid;
+      }
+      if (nums[left] <= nums[mid]) {
+        if (nums[left] <= target && target < nums[mid]) {
+          right = mid - 1;
+        } else {
+          left = mid + 1;
+        }
+      } else {
+        if (nums[mid] < target && target <= nums[right]) {
+          left = mid + 1;
+        } else {
+          right = mid - 1;
+        }
+      }
+    }
+
+    return -1;
+  }
+
+  public static void main(String[] args) {
+    BinarySearchQuestion1 binarySearchQuestion1 = new BinarySearchQuestion1();
+    int[] nums1 = {4, 5, 6, 7, 0, 1, 2};
+    System.out.println(binarySearchQuestion1.search(nums1, 0));
   }
 }

@@ -36,9 +36,9 @@
 | 数组 | 5 | 0 | 双指针、滑动窗口、前后缀已有覆盖 |
 | 哈希表 | 7 | 1 | 补数查找、前缀和、分组归类和哈希统计已覆盖，剩余哈希 + 堆待补 |
 | 链表 | 4 | 1 | 原地反转、`dummy node` 拼接、快慢指针已覆盖，剩余堆结合链表待补 |
-| 栈 / 队列 / 单调栈 | 2 | 2 | 基础栈和辅助状态栈已覆盖，单调栈主线待补 |
+| 栈 / 队列 / 单调栈 | 4 | 0 | 基础栈、辅助状态栈、单调栈基础模板已覆盖 |
 | 字符串 | 3 | 3 | 已覆盖基础滑动窗口、分组归类和计数统计，模拟与窗口进阶待补 |
-| 二分查找 | 1 | 2 | 已覆盖边界二分，标准变体与答案二分待补 |
+| 二分查找 | 3 | 0 | 已覆盖边界二分、变体二分、答案空间二分 |
 | 二叉树 / DFS / BFS | 0 | 6 | Week3 已预生成树遍历、递归、后序 DFS 题 |
 | 堆 / 优先队列 | 0 | 3 | Week3 已预生成 TopK、哈希 + 堆、堆和链表结合题 |
 | 回溯 | 0 | 4 | Week4 已预生成模板题和剪枝 / 状态约束题 |
@@ -73,6 +73,10 @@
 | `19` | 删除链表的倒数第 N 个结点 | 链表 | 快慢指针 + `dummy node` | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion2.java` |
 | `20` | 有效的括号 | 栈 | 普通栈匹配 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion1.java` |
 | `155` | 最小栈 | 栈 | 辅助状态栈 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion2.java` |
+| `739` | 每日温度 | 单调栈 | 最近更大元素 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion1.java` |
+| `496` | 下一个更大元素 I | 单调栈 | 最近更大元素 + 哈希映射 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion2.java` |
+| `33` | 搜索旋转排序数组 | 二分查找 | 变体二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion1.java` |
+| `875` | 爱吃香蕉的珂珂 | 二分查找 | 答案空间二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion2.java` |
 
 ## 5. 当前阶段题目进度
 
@@ -87,10 +91,10 @@
 | Day10 | `19` | 删除链表的倒数第 N 个结点 | 链表 | 快慢指针 + `dummy node` | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day10/FastSlowPointerQuestion2.java` |
 | Day11 | `20` | 有效的括号 | 栈 | 普通栈匹配 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion1.java` |
 | Day11 | `155` | 最小栈 | 栈 | 辅助状态栈 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day11/StackQueueQuestion2.java` |
-| Day12 | `739` | 每日温度 | 单调栈 | 最近更大元素 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion1.java` |
-| Day12 | `496` | 下一个更大元素 I | 单调栈 | 最近更大元素 + 哈希映射 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion2.java` |
-| Day13 | `33` | 搜索旋转排序数组 | 二分查找 | 变体二分 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion1.java` |
-| Day13 | `875` | 爱吃香蕉的珂珂 | 二分查找 | 答案空间二分 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion2.java` |
+| Day12 | `739` | 每日温度 | 单调栈 | 最近更大元素 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion1.java` |
+| Day12 | `496` | 下一个更大元素 I | 单调栈 | 最近更大元素 + 哈希映射 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion2.java` |
+| Day13 | `33` | 搜索旋转排序数组 | 二分查找 | 变体二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion1.java` |
+| Day13 | `875` | 爱吃香蕉的珂珂 | 二分查找 | 答案空间二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion2.java` |
 | Day14 | 专题验收 | Week2 Day14 算法专题验收清单 | 综合复盘 | 哈希 / 链表 / 单调栈 / 二分专题验收 | 已初始化待做 | `prepare/2026/tracks/xiaomi_java_data_service/algorithms/week2_day14_review_checklist.md` |
 | Day15 | `102` | 二叉树的层序遍历 | 二叉树 / BFS | BFS 模板 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeBfsQuestion1.java` |
 | Day15 | `104` | 二叉树的最大深度 | 二叉树 / DFS | DFS 模板 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeDfsQuestion1.java` |
@@ -238,6 +242,26 @@
   - 后续更适合补：
     - `875` 这类答案空间二分
 
+- `变体二分`
+  - 已覆盖题：`33`
+  - 已掌握内容：
+    - 旋转数组里每轮判断哪一半有序
+    - 根据目标值是否落在有序区间里决定收缩方向
+  - 近期不优先再出：
+    - 纯同构的旋转数组搜索题
+  - 后续更适合补：
+    - 含重复元素的旋转数组二分题
+
+- `答案空间二分`
+  - 已覆盖题：`875`
+  - 已掌握内容：
+    - “速度越大，总耗时越小”的单调性判断
+    - 在最小可行解上继续向左收缩
+  - 近期不优先再出：
+    - 纯同构的最小可行值二分题
+  - 后续更适合补：
+    - 更多“最大最小化 / 最小最大化”类答案二分题
+
 ### 6.6 链表
 
 - `原地反转`
@@ -304,33 +328,44 @@
     - `739`
     - `496`
 
+- `最近更大元素 / 单调栈`
+  - 已覆盖题：`739`、`496`
+  - 已掌握内容：
+    - 栈里保存“还没找到更大元素”的下标或元素
+    - 当前元素更大时持续弹栈并结算答案
+  - 近期不优先再出：
+    - 纯基础的最近更大元素模板题
+  - 后续更适合补：
+    - 更复杂的单调栈变体题
+
 ## 7. 当前最适合的出题优先池
 
 如果后续按“当前进度 + 避免重复”继续出题，优先级建议如下：
 
 ### P0：立刻可做
 
-1. `739. 每日温度`
+1. `Week2 Day14 算法专题验收清单`
    - 原因：
-     - 这是 Day12 的主做题
-     - 可以正式切到单调栈模板
-2. `496. 下一个更大元素 I`
+     - 当前 Week2 题目推进已完成到 Day13，下一步就是专题验收
+2. `739. 每日温度`
    - 原因：
-     - 这是 Day12 的加练题
-     - 能把“最近更大元素”模式再练一遍
+     - 是 Day14 计划中的重点重讲题之一
+3. `875. 爱吃香蕉的珂珂`
+   - 原因：
+     - 是 Day14 计划中的重点重讲题之一
 
 ### P1：下一轮适合补
 
-1. `33. 搜索旋转排序数组`
+1. `102. 二叉树的层序遍历`
    - 原因：
-     - 适合作为 Day13 的变体二分主战题
-2. `875. 爱吃香蕉的珂珂`
+     - Day15 会正式进入树的 BFS 模板
+2. `104. 二叉树的最大深度`
    - 原因：
-     - 可以补答案空间二分
+     - Day15 会同时补树的 DFS 基础
 
 ### P2：暂不优先
 
-- 与 `49`、`242`、`206`、`21`、`141`、`19`、`20`、`155` 核心思路高度相似的基础模板题
+- 与 `49`、`242`、`206`、`21`、`141`、`19`、`20`、`155`、`739`、`496`、`33`、`875` 核心思路高度相似的基础模板题
 - 纯重复刷已经完成的题号
 
 ## 8. 后续使用规则

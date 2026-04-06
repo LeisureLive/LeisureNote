@@ -1,5 +1,9 @@
 package com.leisure.note.algorithm.week2.day12;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+
 /**
  * 题目：739. 每日温度
  *
@@ -48,7 +52,57 @@ package com.leisure.note.algorithm.week2.day12;
  */
 public class MonotonicStackQuestion1 {
 
+  /**
+   * 本题在专题中的定位：
+   *
+   * <ul>
+   * <li>单调栈专题：基础模板题</li>
+   * <li>核心信号：要求找到“当前位置右侧第一个更大元素”</li>
+   * <li>栈里保存的是“还没找到答案的位置下标”，而不是温度值本身</li>
+   * </ul>
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>维护一个单调递减栈，栈中下标对应的温度从栈顶到栈底递增难以保持，但核心是“栈顶对应最近、且尚未找到更高温度的位置”。</li>
+   * <li>遍历到当天温度 {@code temperatures[i]} 时，只要它比栈顶位置温度更高，就说明栈顶位置终于等到了答案。</li>
+   * <li>弹出栈顶下标 {@code index}，并记录 {@code result[index] = i - index}。</li>
+   * <li>当前下标处理完后入栈，继续等待右侧更高温度。</li>
+   * </ol>
+   *
+   * <p>易错点：
+   *
+   * <ul>
+   * <li>栈里通常要存下标，因为最后要计算“相差多少天”；如果只存值，就丢失位置信息了。</li>
+   * <li>这题找的是“更高温度”，所以弹栈条件是严格小于 {@code temperatures[i]}，不是小于等于。</li>
+   * <li>每个下标最多进栈一次、出栈一次，所以整体复杂度是 {@code O(n)}，不要误以为 while 就是 {@code O(n^2)}。</li>
+   * </ul>
+   */
   public int[] dailyTemperatures(int[] temperatures) {
-    throw new UnsupportedOperationException("TODO: implement dailyTemperatures");
+    if (temperatures == null || temperatures.length == 0) {
+      return new int[0];
+    }
+
+    Deque<Integer> stack = new ArrayDeque<>();
+    int[] result = new int[temperatures.length];
+    for (int i = 0; i < temperatures.length; i++) {
+      while (!stack.isEmpty() && temperatures[stack.peek()] < temperatures[i]) {
+        int index = stack.pop();
+        result[index] = i - index;
+      }
+      stack.push(i);
+    }
+    while (!stack.isEmpty()) {
+      int index = stack.pop();
+      result[index] = 0;
+    }
+
+    return result;
+  }
+
+  public static void main(String[] args) {
+    MonotonicStackQuestion1 stackQuestion = new MonotonicStackQuestion1();
+    int[] temperatures = new int[]{7, 0, 2, 1, 5, 4};
+    System.out.println(Arrays.toString(stackQuestion.dailyTemperatures(temperatures)));
   }
 }
