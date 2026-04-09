@@ -1,5 +1,8 @@
 package com.leisure.note.algorithm.week3.day15;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -49,7 +52,28 @@ import java.util.List;
 public class TreeBfsQuestion1 {
 
   public List<List<Integer>> levelOrder(TreeNode root) {
-    throw new UnsupportedOperationException("TODO: implement levelOrder");
+    if (root == null) return new ArrayList<>();
+
+    List<List<Integer>> result = new ArrayList<>();
+    Deque<TreeNode> queue = new ArrayDeque<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      // 先固定当前层的节点数，避免把下一层节点也一起处理掉。
+      int size = queue.size();
+      List<Integer> list = new ArrayList<>();
+      for (int i = 0; i < size; i++) {
+        TreeNode node = queue.poll();
+        if (node == null) continue;
+
+        list.add(node.val);
+        // 按从左到右的顺序扩展下一层节点。
+        if (node.left != null) queue.add(node.left);
+        if (node.right != null) queue.add(node.right);
+      }
+      result.add(list);
+    }
+
+    return result;
   }
 
   public static class TreeNode {

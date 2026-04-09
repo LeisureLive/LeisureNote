@@ -47,7 +47,38 @@ package com.leisure.note.algorithm.week3.day17;
 public class TreeRecursionQuestion2 {
 
   public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-    throw new UnsupportedOperationException("TODO: implement lowestCommonAncestor");
+    if (root == null || p == null || q == null) {
+      return null;
+    }
+
+    // 这题的核心不是返回 boolean，而是递归直接返回“当前子树里找到的有效节点引用”。
+    // 易错点：
+    // 1. 返回的是节点引用，不是节点值。
+    // 2. 如果当前节点本身就是 p 或 q，它也可能就是答案的一部分，必须直接返回。
+    // 3. 谁先同时接到左右两边的有效返回值，谁就是最近公共祖先。
+    return dfs(root, p, q);
+  }
+
+  private TreeNode dfs(TreeNode root, TreeNode p, TreeNode q) {
+    if (root == null) {
+      return null;
+    }
+
+    if (root == p || root == q) {
+      // 当前节点本身命中目标节点时，直接把它作为有效结果向上返回。
+      return root;
+    }
+
+    // 后序归并：先分别看左右子树能返回什么节点引用。
+    TreeNode left = dfs(root.left, p, q);
+    TreeNode right = dfs(root.right, p, q);
+
+    if (left != null && right != null) {
+      // 左右两边都找到了有效结果，说明当前节点就是最近公共祖先。
+      return root;
+    }
+    // 只有一边非空，说明 p 和 q 还都在同一侧，或者当前子树只命中了其中一个。
+    return left == null ? right : left;
   }
 
   public static class TreeNode {
@@ -55,7 +86,8 @@ public class TreeRecursionQuestion2 {
     TreeNode left;
     TreeNode right;
 
-    TreeNode() {}
+    TreeNode() {
+    }
 
     TreeNode(int val) {
       this.val = val;

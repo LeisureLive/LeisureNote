@@ -47,7 +47,12 @@ package com.leisure.note.algorithm.week3.day15;
 public class TreeDfsQuestion1 {
 
   public int maxDepth(TreeNode root) {
-    throw new UnsupportedOperationException("TODO: implement maxDepth");
+    // 递归函数定义：返回以当前节点为根的子树最大深度。
+    if (root == null) return 0;
+    if (root.left == null && root.right == null) return 1;
+    int left = maxDepth(root.left);
+    int right = maxDepth(root.right);
+    return Math.max(left, right) + 1;
   }
 
   public static class TreeNode {

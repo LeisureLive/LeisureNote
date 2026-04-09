@@ -47,7 +47,14 @@ package com.leisure.note.algorithm.week3.day16;
 public class TreeRecursionQuestion1 {
 
   public TreeNode invertTree(TreeNode root) {
-    throw new UnsupportedOperationException("TODO: implement invertTree");
+    if (root == null) return null;
+    // 先保存原左右子树，避免交换过程中覆盖掉还没处理的指针。
+    TreeNode left = root.left;
+    TreeNode right = root.right;
+    // 递归翻转后，把原右子树挂到左边，原左子树挂到右边。
+    root.left = invertTree(right);
+    root.right = invertTree(left);
+    return root;
   }
 
   public static class TreeNode {
@@ -55,7 +62,8 @@ public class TreeRecursionQuestion1 {
     TreeNode left;
     TreeNode right;
 
-    TreeNode() {}
+    TreeNode() {
+    }
 
     TreeNode(int val) {
       this.val = val;

@@ -39,7 +39,7 @@
 | 栈 / 队列 / 单调栈 | 4 | 0 | 基础栈、辅助状态栈、单调栈基础模板已覆盖 |
 | 字符串 | 3 | 3 | 已覆盖基础滑动窗口、分组归类和计数统计，模拟与窗口进阶待补 |
 | 二分查找 | 3 | 0 | 已覆盖边界二分、变体二分、答案空间二分 |
-| 二叉树 / DFS / BFS | 0 | 6 | Week3 已预生成树遍历、递归、后序 DFS 题 |
+| 二叉树 / DFS / BFS | 8 | 0 | 已完成 BFS、基础 DFS、前中后序遍历、树递归和信息归并题 |
 | 堆 / 优先队列 | 0 | 3 | Week3 已预生成 TopK、哈希 + 堆、堆和链表结合题 |
 | 回溯 | 0 | 4 | Week4 已预生成模板题和剪枝 / 状态约束题 |
 | 图 | 0 | 4 | Week4 已预生成 DFS / BFS / 拓扑排序相关题 |
@@ -96,12 +96,14 @@
 | Day13 | `33` | 搜索旋转排序数组 | 二分查找 | 变体二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion1.java` |
 | Day13 | `875` | 爱吃香蕉的珂珂 | 二分查找 | 答案空间二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion2.java` |
 | Day14 | 专题验收 | Week2 Day14 算法专题验收清单 | 综合复盘 | 哈希 / 链表 / 单调栈 / 二分专题验收 | 已初始化待做 | `prepare/2026/tracks/xiaomi_java_data_service/algorithms/week2_day14_review_checklist.md` |
-| Day15 | `102` | 二叉树的层序遍历 | 二叉树 / BFS | BFS 模板 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeBfsQuestion1.java` |
-| Day15 | `104` | 二叉树的最大深度 | 二叉树 / DFS | DFS 模板 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeDfsQuestion1.java` |
-| Day16 | `94` | 二叉树的中序遍历 | 二叉树 | 遍历模板 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeTraversalQuestion1.java` |
-| Day16 | `226` | 翻转二叉树 | 二叉树 | 树递归基础 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeRecursionQuestion1.java` |
-| Day17 | `543` | 二叉树的直径 | 二叉树 / DFS | 后序 DFS | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day17/TreeDfsQuestion2.java` |
-| Day17 | `236` | 二叉树的最近公共祖先 | 二叉树 | 递归信息归并 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day17/TreeRecursionQuestion2.java` |
+| Day15 | `102` | 二叉树的层序遍历 | 二叉树 / BFS | BFS 模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeBfsQuestion1.java` |
+| Day15 | `104` | 二叉树的最大深度 | 二叉树 / DFS | DFS 模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeDfsQuestion1.java` |
+| Day16 | `94` | 二叉树的中序遍历 | 二叉树 | 遍历模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeTraversalQuestion1.java` |
+| Day16 | `144` | 二叉树的前序遍历 | 二叉树 | 遍历模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeTraversalQuestion2.java` |
+| Day16 | `145` | 二叉树的后序遍历 | 二叉树 | 遍历模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeTraversalQuestion3.java` |
+| Day16 | `226` | 翻转二叉树 | 二叉树 | 树递归基础 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeRecursionQuestion1.java` |
+| Day17 | `543` | 二叉树的直径 | 二叉树 / DFS | 后序 DFS | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day17/TreeDfsQuestion2.java` |
+| Day17 | `236` | 二叉树的最近公共祖先 | 二叉树 | 递归信息归并 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day17/TreeRecursionQuestion2.java` |
 | Day18 | `215` | 数组中的第 K 个最大元素 | 堆 | TopK 小顶堆 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day18/HeapQuestion1.java` |
 | Day18 | `347` | 前 K 个高频元素 | 哈希表 / 堆 | 哈希统计 + 堆 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day18/HeapQuestion2.java` |
 | Day19 | `23` | 合并 K 个升序链表 | 链表 / 堆 | 堆和链表结合 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day19/HeapLinkedListQuestion1.java` |
