@@ -1,5 +1,8 @@
 package com.leisure.note.algorithm.week3.day19;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /**
  * 题目：23. 合并 K 个升序链表
  *
@@ -47,14 +50,43 @@ package com.leisure.note.algorithm.week3.day19;
 public class HeapLinkedListQuestion1 {
 
   public ListNode mergeKLists(ListNode[] lists) {
-    throw new UnsupportedOperationException("TODO: implement mergeKLists");
+    // 这题本质是“多路有序链表归并”：堆里只放每条链表当前最小的候选节点。
+    // 易错点：
+    // 1. 我一开始想到过把所有节点一次性入堆，但那样没有利用“每个链表本身有序”这个条件。
+    // 2. 正确做法是只把每条链表的头节点入堆，弹出一个，再把它的 next 入堆。
+    if (lists == null || lists.length == 0) {
+      return null;
+    }
+
+    PriorityQueue<ListNode> heap = new PriorityQueue<>(Comparator.comparing(node -> node.val));
+    for (ListNode node : lists) {
+      if (node != null) {
+        heap.add(node);
+      }
+    }
+
+    ListNode dummyHead = new ListNode(0);
+    ListNode cur = dummyHead;
+    while (!heap.isEmpty()) {
+      ListNode node = heap.poll();
+      // 这个节点出堆后，它所在链表里下一个节点才有资格参与全局最小值竞争。
+      if (node.next != null) {
+        heap.add(node.next);
+      }
+
+      cur.next = node;
+      cur = cur.next;
+    }
+
+    return dummyHead.next;
   }
 
   public static class ListNode {
     int val;
     ListNode next;
 
-    ListNode() {}
+    ListNode() {
+    }
 
     ListNode(int val) {
       this.val = val;

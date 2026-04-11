@@ -1,5 +1,7 @@
 package com.leisure.note.algorithm.week4.day23;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -49,6 +51,50 @@ import java.util.List;
 public class BacktrackingQuestion3 {
 
   public List<List<Integer>> combinationSum(int[] candidates, int target) {
-    throw new UnsupportedOperationException("TODO: implement combinationSum");
+    // 这题是组合型回溯：顺序不重要，所以用 startIndex 保证后续只往后选。
+    // 易错点：
+    // 1. 这题允许重复使用当前数字，所以递归下一层时要继续传 i，而不是 i + 1。
+    // 2. 我这里用 cur 表示当前路径和，达到 target 收答案，超过 target 直接返回。
+    // 3. 排序后可以用“cur + candidates[i] > target 就 break”做前置剪枝，比递归后再失败返回更直接。
+    if (candidates == null || candidates.length == 0) {
+      return new ArrayList<>();
+    }
+
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+    Arrays.sort(candidates);
+    backTrace(candidates, res, path, 0, 0, target);
+    return res;
+  }
+
+  private void backTrace(int[] candidates, List<List<Integer>> res, List<Integer> path, int startIndex, int cur,
+    int target) {
+    if (cur == target) {
+      res.add(new ArrayList<>(path));
+      return;
+    }
+
+    if (cur > target) {
+      return;
+    }
+
+    for (int i = startIndex; i < candidates.length; i++) {
+      // 数组已排序，当前值一旦超出剩余目标，后面更大的值也不用再试。
+      if (cur + candidates[i] > target) {
+        break;
+      }
+      path.add(candidates[i]);
+      // 组合总和允许重复使用当前数字，所以递归仍然从 i 开始。
+      backTrace(candidates, res, path, i, cur + candidates[i], target);
+      // 回溯：撤销当前选择，尝试同层下一个候选数。
+      path.remove(path.size() - 1);
+    }
+  }
+
+  public static void main(String[] args) {
+    BacktrackingQuestion3 backtrackingQuestion3 = new BacktrackingQuestion3();
+    int[] nums = {1, 2, 3};
+    List<List<Integer>> res = backtrackingQuestion3.combinationSum(nums, 3);
+    System.out.println(res);
   }
 }
