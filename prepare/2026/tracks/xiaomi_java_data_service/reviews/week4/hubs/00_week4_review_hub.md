@@ -57,6 +57,7 @@ Week4 的主线不是“再学一轮”，而是完成下面四件事：
 | 混合复习：存储 / 中间件 / 大数据开发 / 选型 | 回看 Week1、Week3 相关专题 | Day24 | 复用已有专题 |
 | 系统设计 + 项目表达二轮复盘 | 回看 Week3 相关专题 | Day25 | 复用已有专题 |
 | 故障排查与性能优化 | `topics/01_troubleshooting_performance_linux_network_system_review.md` | Day26 | 当前已补 |
+| 项目故事、亮点提炼与追问展开 | `topics/02_project_story_highlights_and_followups_system_review.md` | Day25-Day28 穿插 | 当前已补 |
 | 全真模拟 / 查漏补缺 | 本文件 + 各专题自测清单 | Day27-Day28 | 按执行推进 |
 
 说明：
@@ -68,10 +69,10 @@ Week4 的主线不是“再学一轮”，而是完成下面四件事：
 
 | Day | 模块 | 重点目标 | 对应文档 |
 | --- | --- | --- | --- |
-| Day22 | 并发 + JVM + 设计模式混合复习 | 验证基础硬核模块是否能做 1 分钟 / 3 分钟 / 深挖版切换 | 回看 `week1/topics/*` + `week2/topics/09_backend_design_patterns_for_service_system_review.md` |
-| Day23 | Spring + MyBatis + Dubbo / RPC + Java Web 混合复习 | 验证框架链是否已经能讲成主流程和治理链 | 回看 `week2/topics/*` |
-| Day24 | MySQL + Redis + Kafka + Flink / Spark / HDFS / Hive / Impala + 多引擎选型 | 验证存储、中间件和大数据开发边界是否已经打通 | 回看 `week1/topics/03_mysql_system_review.md` + `week1/topics/04_redis_system_review.md` + `week1/topics/05_kafka_system_review.md` + `week3/topics/01-03_*.md` |
-| Day25 | 系统设计 + 项目表达二轮复盘 | 把数据服务、实时链路、查询、平台化表达串成完整叙事 | 回看 `week3/topics/00_system_design_methodology_and_distributed_basics_system_review.md` + `week3/topics/04-08_*.md` |
+| Day22 | 并发 + JVM + 设计模式混合复习 | 验证基础硬核模块是否能做 1 分钟 / 3 分钟 / 深挖版切换 | 回看 `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/01_1_threadpool_lock_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/01_2_jmm_and_lockfree_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/02_1_jvm_runtime_classloading_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/02_2_jvm_gc_troubleshooting_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/09_backend_design_patterns_for_service_system_review.md` |
+| Day23 | Spring + MyBatis + Dubbo / RPC + Java Web 混合复习 | 验证框架链是否已经能讲成主流程和治理链 | 回看 `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/01_spring_ioc_container_and_bean_lifecycle_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/02_spring_aop_and_dynamic_proxy_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/03_spring_circular_dependency_and_three_level_cache_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/04_spring_transaction_and_transactional_failure_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/05_spring_mvc_and_java_web_request_flow_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/06_spring_boot_auto_configuration_and_startup_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/07_mybatis_execution_cache_and_paging_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week2/topics/08_rpc_dubbo_springcloud_and_grpc_system_review.md` |
+| Day24 | MySQL + Redis + Kafka + Flink / Spark / HDFS / Hive / Impala + 多引擎选型 | 验证存储、中间件和大数据开发边界是否已经打通 | 回看 `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/03_mysql_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/04_redis_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week1/topics/05_kafka_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/01_flink_state_checkpoint_watermark_and_backpressure_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/02_spark_dag_shuffle_and_data_skew_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/03_hdfs_hive_impala_and_query_engine_selection_system_review.md` |
+| Day25 | 系统设计 + 项目表达二轮复盘 | 把数据服务、实时链路、查询、平台化表达串成完整叙事 | 回看 `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/00_system_design_methodology_and_distributed_basics_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/04_realtime_subscription_system_design_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/05_realtime_query_system_design_and_multi_engine_selection_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/06_high_availability_idempotency_consistency_and_distributed_transaction_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/07_data_platform_metadata_scheduling_monitoring_permission_multitenancy_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/08_project_architecture_upgrade_from_function_to_platform_system_review.md` + `prepare/2026/tracks/xiaomi_java_data_service/reviews/week4/topics/02_project_story_highlights_and_followups_system_review.md` |
 | Day26 | 故障排查与性能优化 | 建立“先现象、再范围、再根因、再止损”的稳定排障主线 | `topics/01_troubleshooting_performance_linux_network_system_review.md` |
 | Day27 | 全真模拟技术面 | 检查基础技术、框架、中间件、系统设计和项目表达是否形成闭环 | 本文件 + 已有专题自测清单 |
 | Day28 | 最终查漏补缺 | 只看高频题、错题、薄弱点，不再扩新知识 | 本文件 + 自己整理的最终清单 |
@@ -96,6 +97,7 @@ Week4 的主线不是“再学一轮”，而是完成下面四件事：
   - MQ 和幂等怎么接订阅系统设计
   - Flink / Spark / Hive / Impala 怎么接平台化链路
 - Day26 的排障专题要尽量结合你自己的线上案例，不要只背命令。
+- 如果某天明显发现某一篇旧专题仍然讲不顺，优先回到对应专题重新读主线和边界，不要急着继续往下混合抽查。
 
 ## 6. Week4 周复盘方法
 
