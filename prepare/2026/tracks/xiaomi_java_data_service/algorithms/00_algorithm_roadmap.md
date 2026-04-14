@@ -13,6 +13,12 @@
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/03_linked_list.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/04_stack_queue_monotonic_stack.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/05_strings.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/06_trees_dfs_bfs.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/07_heap_priority_queue.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/08_binary_search.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/09_backtracking.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/10_graphs.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/11_dynamic_programming.md`
 
 训练规则入口：
 
@@ -184,12 +190,27 @@
 - `03_linked_list.md`
 - `04_stack_queue_monotonic_stack.md`
 - `05_strings.md`
+- `06_trees_dfs_bfs.md`
+- `07_heap_priority_queue.md`
+- `08_binary_search.md`
+- `09_backtracking.md`
+- `10_graphs.md`
+- `11_dynamic_programming.md`
 
-按当前面试性价比，下一批最值得继续补的是：
+当前算法主线专题已经覆盖到：
 
-1. 二叉树 / DFS / BFS
-2. 堆 / 优先队列
-3. 二分查找
-4. 回溯
-5. 图
-6. 动态规划
+1. 数组 / 哈希 / 链表
+2. 栈 / 队列 / 单调栈
+3. 字符串
+4. 树 / DFS / BFS
+5. 堆 / 优先队列
+6. 二分查找
+7. 回溯
+8. 图
+9. 动态规划
+
+后续更值得继续补的，不再是新增大类专题，而是：
+
+1. 每个专题的验收题与错题回看
+2. 高频题的口头表达模板
+3. 结合月计划推进时的日复盘和专题总结
