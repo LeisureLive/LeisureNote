@@ -19,6 +19,7 @@
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/09_backtracking.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/10_graphs.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/algorithms/11_dynamic_programming.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/algorithms/12_greedy.md`
 
 训练规则入口：
 
@@ -196,6 +197,7 @@
 - `09_backtracking.md`
 - `10_graphs.md`
 - `11_dynamic_programming.md`
+- `12_greedy.md`
 
 当前算法主线专题已经覆盖到：
 
@@ -208,6 +210,7 @@
 7. 回溯
 8. 图
 9. 动态规划
+10. 贪心
 
 后续更值得继续补的，不再是新增大类专题，而是：
 

@@ -1,6 +1,6 @@
 # 算法已做题台账与去重索引
 
-最后更新：`2026-04-06`
+最后更新：`2026-04-16`
 
 ## 1. 这份文档解决什么问题
 
@@ -44,6 +44,7 @@
 | 回溯 | 0 | 4 | Week4 已预生成模板题和剪枝 / 状态约束题 |
 | 图 | 0 | 4 | Week4 已预生成 DFS / BFS / 拓扑排序相关题 |
 | 动态规划 | 0 | 4 | Week4 已预生成入门模板和进阶高频题 |
+| 贪心 | 0 | 4 | Week5 已预生成压缩版高频代表题 |
 
 说明：
 
@@ -122,6 +123,10 @@
 | Day26 | `198` | 打家劫舍 | 动态规划 | 一维 DP | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day26/DpQuestion2.java` |
 | Day27 | `322` | 零钱兑换 | 动态规划 | 完全背包 / DP 进阶 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion3.java` |
 | Day27 | `300` | 最长递增子序列 | 动态规划 | DP 高频题 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion4.java` |
+| Day29 | `55` | 跳跃游戏 | 贪心 | 覆盖范围 / 可达性 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion1.java` |
+| Day29 | `121` | 买卖股票的最佳时机 | 贪心 | 历史最优状态 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion2.java` |
+| Day30 | `45` | 跳跃游戏 II | 贪心 | 覆盖范围 / 最少跳数 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion1.java` |
+| Day30 | `435` | 无重叠区间 | 贪心 | 区间选择 / 按结束排序 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion2.java` |
 
 ## 6. 已覆盖模式索引
 
@@ -444,3 +449,9 @@
 - Day27：
   - `322. 零钱兑换`
   - `300. 最长递增子序列`
+- Day29：
+  - `55. 跳跃游戏`
+  - `121. 买卖股票的最佳时机`
+- Day30：
+  - `45. 跳跃游戏 II`
+  - `435. 无重叠区间`
