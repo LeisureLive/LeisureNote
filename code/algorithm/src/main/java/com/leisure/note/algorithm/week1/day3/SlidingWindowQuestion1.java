@@ -1,7 +1,6 @@
 package com.leisure.note.algorithm.week1.day3;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -70,6 +69,43 @@ import java.util.Set;
  */
 public class SlidingWindowQuestion1 {
 
+  /**
+   * 本题在专题中的定位：
+   *
+   * <ul>
+   * <li>字符串专题：滑动窗口</li>
+   * <li>特征：连续子串 + 最长 + 窗口内字符不能重复</li>
+   * </ul>
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>用两个指针维护当前无重复字符窗口。</li>
+   * <li>右指针负责扩张窗口；如果遇到重复字符，就移动左指针并从集合中移除字符，直到窗口重新合法。</li>
+   * <li>每次窗口合法时，用窗口长度更新答案。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>当前这版用 {@code HashSet} 写法直观，容易理解“窗口里有什么”。</li>
+   * <li>每个字符最多进出窗口一次，整体时间复杂度是 {@code O(n)}。</li>
+   * </ul>
+   *
+   * <p>缺点：
+   *
+   * <ul>
+   * <li>遇到重复字符时只能一步一步收缩，常数略大。</li>
+   * <li>如果想更高效地跳过重复位置，可以改成“字符 -> 最近位置”的哈希表写法。</li>
+   * </ul>
+   *
+   * <p>变体应对：
+   *
+   * <ul>
+   * <li>如果字符集固定且较小，可以用数组代替集合或哈希表。</li>
+   * <li>如果题目要求返回具体子串，在记录最大长度时顺手保存左右边界即可。</li>
+   * </ul>
+   */
   public int lengthOfLongestSubstring(String s) {
     if (s == null) {
       return 0;

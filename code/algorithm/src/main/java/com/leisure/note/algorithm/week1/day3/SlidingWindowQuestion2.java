@@ -69,6 +69,43 @@ package com.leisure.note.algorithm.week1.day3;
  */
 public class SlidingWindowQuestion2 {
 
+  /**
+   * 本题在专题中的定位：
+   *
+   * <ul>
+   * <li>数组专题：滑动窗口</li>
+   * <li>特征：连续子数组 + 最短 + 窗口和达到目标值</li>
+   * </ul>
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>维护窗口和 {@code sum}，右指针不断扩张窗口。</li>
+   * <li>一旦 {@code sum >= target}，就尝试移动左指针收缩窗口，并更新当前最短长度。</li>
+   * <li>因为数组元素全为正数，所以左指针右移后窗口和只会变小，这个单调性保证了窗口做法成立。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>时间复杂度 {@code O(n)}，额外空间 {@code O(1)}。</li>
+   * <li>非常适合训练“窗口合法条件”和“收缩时机”这两个滑动窗口核心点。</li>
+   * </ul>
+   *
+   * <p>缺点：
+   *
+   * <ul>
+   * <li>强依赖“数组元素都是正整数”这个前提。</li>
+   * <li>一旦数组里允许负数，这个窗口单调性就不存在了。</li>
+   * </ul>
+   *
+   * <p>变体应对：
+   *
+   * <ul>
+   * <li>如果题目改成“最长”或“恰好等于某值”，窗口定义和更新时机可能会变化。</li>
+   * <li>如果允许负数，通常需要改用前缀和或更复杂的数据结构，而不能机械套本题模板。</li>
+   * </ul>
+   */
   public int minSubArrayLen(int target, int[] nums) {
     if (nums == null || nums.length == 0) {
       return 0;

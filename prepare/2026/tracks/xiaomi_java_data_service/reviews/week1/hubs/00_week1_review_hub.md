@@ -25,6 +25,7 @@
 | MySQL | `topics/03_mysql_system_review.md` | Day5 | 无单独日文档，直接看专题文档 |
 | Redis | `topics/04_redis_system_review.md` | Day6 | 无单独日文档，直接看专题文档 |
 | Kafka | `topics/05_kafka_system_review.md` | Day6 | 无单独日文档，直接看专题文档 |
+| IO 基础补充专题 | `topics/06_io_from_disk_network_nio_system_review.md` | Week1 补充学习 | 无单独日文档，作为 Redis / JVM / Kafka 的补充主线 |
 
 ## 3. 每日映射
 
@@ -36,6 +37,7 @@
 | Day4 | GC、收集器、线上排障 | 建立 GC、停顿和线上排障的稳定分析链路 | `topics/02_2_jvm_gc_troubleshooting_system_review.md` + `daily/day4_jvm_gc_troubleshooting_review.md` |
 | Day5 | MySQL 索引、事务、MVCC、慢 SQL | 建立 SQL 执行、事务并发和排查思维 | `topics/03_mysql_system_review.md` |
 | Day6 | Redis、Kafka | 建立缓存与消息队列的工程化认知 | `topics/04_redis_system_review.md` + `topics/05_kafka_system_review.md` |
+| 补充专题 | IO 基础、磁盘 IO、网络 IO、NIO、直接内存、IO 多路复用 | 建立 Redis / JVM / Kafka 里反复出现的 IO 主线 | `topics/06_io_from_disk_network_nio_system_review.md` |
 | Day7 | 周复盘 | 只复盘主线和薄弱点，不回炉全量笔记 | 本文件 + 各专题文档自测清单 |
 
 ## 4. 使用方式
@@ -111,6 +113,7 @@ Week1 算法不要求刷很多题，而要求你恢复这四件事：
 - MySQL 索引、MVCC、慢 SQL 排查主线
 - Redis 的快、缓存问题和一致性边界
 - Kafka 的吞吐、可靠性、顺序性和重复消费边界
+- 能把磁盘 IO、网络 IO、NIO、IO 多路复用这些词放回同一条 IO 主线里理解
 ## 7. 与日复盘文档关系
 
 建议这样配合使用：
@@ -126,10 +129,12 @@ Week1 算法不要求刷很多题，而要求你恢复这四件事：
 - `daily/day4_jvm_gc_troubleshooting_review.md`：
   - 负责 Day4 GC 主线、线上排障和前缀和 + 哈希题型复盘
 
-如果你后面愿意继续细化，最适合的下一步不是再堆“标准答案”，而是继续补：
+当前 Week1 专题文档已经覆盖 Day1-Day6 的复习主题。
 
-- Day4 JVM GC / 排障专项
-- Day5 MySQL 系统复习文档
-- Day6 Redis / Kafka 系统复习文档
+如果后面继续细化，当前更值得优先做的是：
 
-这样 Week1 的知识层会更完整，后面再回到面试答题，表达会稳很多。
+- 把 Day1-Day4 的旧专题文档继续补齐到和 MySQL / Redis / Kafka 同一结构层级
+- 结合真实口头输出和模拟问答，补每个模块最容易被追问散掉的点
+- 在 Day7 周复盘里只记录薄弱点，不重复抄整份专题正文
+
+这样 Week1 的知识层和表达层会更一致，后面再回到面试答题，稳定性会更高。

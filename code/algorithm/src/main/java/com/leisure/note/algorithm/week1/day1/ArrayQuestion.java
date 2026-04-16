@@ -1,21 +1,59 @@
 package com.leisure.note.algorithm.week1.day1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.LongAdder;
 
 /**
- * @author jie.he
- * @version 1.0.0
- * @since 2026/03/22 23:25
+ * Week1 Day1 已完成题。
+ *
+ * <p>这里放的是：
+ *
+ * <ul>
+ * <li>`238. 除自身以外数组的乘积`</li>
+ * <li>`128. 最长连续序列`</li>
+ * </ul>
  */
 public class ArrayQuestion {
 
+  /**
+   * `238. 除自身以外数组的乘积`
+   *
+   * <p>专题定位：
+   *
+   * <ul>
+   * <li>数组专题：前后缀分解</li>
+   * <li>特征：每个位置的答案同时依赖左边信息和右边信息</li>
+   * </ul>
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>先分别计算每个位置左边的乘积和右边的乘积。</li>
+   * <li>当前下标 {@code i} 的答案，就是左侧乘积乘以右侧乘积。</li>
+   * <li>这样可以避免对每个位置都重新扫描左右两侧。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>时间复杂度 {@code O(n)}，不需要使用除法。</li>
+   * <li>很适合训练“答案依赖左右两侧信息”的前后缀分解思维。</li>
+   * </ul>
+   *
+   * <p>缺点：
+   *
+   * <ul>
+   * <li>当前实现使用了两个辅助数组，额外空间是 {@code O(n)}。</li>
+   * <li>还可以继续优化成结果数组加一个滚动后缀变量的写法。</li>
+   * </ul>
+   *
+   * <p>变体应对：
+   *
+   * <ul>
+   * <li>如果题目要求更低额外空间，通常把前缀结果先写入答案数组，再逆序补后缀。</li>
+   * <li>如果题目允许除法且没有 0，可以有更简单写法，但面试里一般不优先讲。</li>
+   * </ul>
+   */
   public int[] productExceptSelf(int[] arr) {
     // arr1[i] 表示 arr[0..i] 的乘积（包含 arr[i]）
     // arr2[j] 表示 arr[j..n-1] 的乘积（包含 arr[j]）
@@ -23,7 +61,7 @@ public class ArrayQuestion {
     int[] arr2 = new int[arr.length];
 
     arr1[0] = arr[0];
-    arr2[arr.length - 1] = arr[arr.length -1];
+    arr2[arr.length - 1] = arr[arr.length - 1];
     for (int i = 1; i < arr.length; i++) {
       arr1[i] = arr1[i - 1] * arr[i];
     }
@@ -34,7 +72,7 @@ public class ArrayQuestion {
 
     int[] result = new int[arr.length];
     for (int k = 0; k < arr.length; k++) {
-      if (k -1 < 0) {
+      if (k - 1 < 0) {
         result[k] = arr2[k + 1];
       } else if (k + 1 >= arr.length) {
         result[k] = arr1[k - 1];
@@ -45,6 +83,45 @@ public class ArrayQuestion {
     return result;
   }
 
+  /**
+   * `128. 最长连续序列`
+   *
+   * <p>专题定位：
+   *
+   * <ul>
+   * <li>哈希专题：存在性判断</li>
+   * <li>特征：要快速判断某个数是否存在，并希望把暴力枚举降到线性</li>
+   * </ul>
+   *
+   * <p>思路：
+   *
+   * <ol>
+   * <li>先把所有元素放进 {@code HashSet}，把存在性判断降到平均 {@code O(1)}。</li>
+   * <li>遍历每个数时，只从“连续序列起点”开始扩展，也就是它的前一个数不存在时才继续往后找。</li>
+   * <li>这样每段连续序列只会被真正统计一次。</li>
+   * </ol>
+   *
+   * <p>优点：
+   *
+   * <ul>
+   * <li>平均时间复杂度可以做到 {@code O(n)}。</li>
+   * <li>“只从起点开始”这个技巧很适合训练哈希题里的去重扫描意识。</li>
+   * </ul>
+   *
+   * <p>缺点：
+   *
+   * <ul>
+   * <li>需要额外的 {@code HashSet} 空间。</li>
+   * <li>如果只记住“用 set”，但忘了“只从起点开始”，复杂度就容易退化。</li>
+   * </ul>
+   *
+   * <p>变体应对：
+   *
+   * <ul>
+   * <li>如果题目要求返回具体序列，可以在记录最大长度的同时保存起点。</li>
+   * <li>如果题目不允许额外空间，通常要换成排序后线性扫描的思路。</li>
+   * </ul>
+   */
   public int maxContinuousSequence(int[] arr) {
     if (arr.length <= 1) {
       return arr.length;
@@ -57,19 +134,19 @@ public class ArrayQuestion {
 
     int maxSequenceLength = 1;
     for (int j = 0; j < arr.length; j++) {
-     int base = arr[j];
-     if (set.contains(base -1)) {
+      int base = arr[j];
+      if (set.contains(base - 1)) {
         continue;
-     }
+      }
 
-     int tempSequenceLength = 1;
-     while (set.contains(base + 1)) {
-       base = base +1;
-       tempSequenceLength++;
-     }
-     if (tempSequenceLength > maxSequenceLength) {
-       maxSequenceLength = tempSequenceLength;
-     }
+      int tempSequenceLength = 1;
+      while (set.contains(base + 1)) {
+        base = base + 1;
+        tempSequenceLength++;
+      }
+      if (tempSequenceLength > maxSequenceLength) {
+        maxSequenceLength = tempSequenceLength;
+      }
     }
 
     return maxSequenceLength;
