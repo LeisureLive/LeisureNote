@@ -3,7 +3,9 @@
 对应计划：
 
 - `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md`
-- `prepare/2026/workspace/00_interview_master.md`
+- `prepare/2026/profile/00_interview_master.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/04_project_story_stable_draft.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/05_project_followup_checklist.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/04_realtime_subscription_system_design_system_review.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/05_realtime_query_system_design_and_multi_engine_selection_system_review.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/08_project_architecture_upgrade_from_function_to_platform_system_review.md`
@@ -236,7 +238,7 @@
 
 这个问题是怎么解决的：
 
-基于 `prepare/2026/workspace/00_interview_master.md` 当前已知素材，你最值得优先打磨的两个项目分别是：
+基于 `prepare/2026/profile/00_interview_master.md` 当前已知素材，你最值得优先打磨的两个项目分别是：
 
 #### 项目 1：实时数据订阅 + 实时查询
 

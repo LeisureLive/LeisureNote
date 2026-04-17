@@ -19,6 +19,11 @@ xiaomi_java_data_service/
 ├── 00_high_frequency_knowledge_map.md
 ├── 01_1month_plan.md
 ├── 02_merged_role_requirements_and_prep_focus.md
+├── 03_gap_review_and_adjustments.md
+├── 04_project_story_stable_draft.md
+├── 05_project_followup_checklist.md
+├── 06_troubleshooting_qa_outline.md
+├── 07_engineering_quality_and_collaboration_outline.md
 ├── algorithms/
 └── reviews/
 ```
@@ -68,6 +73,47 @@ xiaomi_java_data_service/
 - 哪些只是加分项
 - 后续为什么要调整知识地图和月计划
 
+### `03_gap_review_and_adjustments.md`
+
+作用：
+
+- 基于目标岗位要求，对当前主线材料做系统 review
+- 显式指出哪些要求已覆盖、哪些覆盖不足、哪些安排需要调整
+
+适合在正式推进计划前先看它，明确：
+
+- 当前准备是否和岗位要求真正对齐
+- 技术主线、算法训练、项目表达和排障准备哪里还有缺口
+- 后续优先应该调整什么
+
+### `04_project_story_stable_draft.md`
+
+作用：
+
+- 把核心项目整理成可直接面试使用的稳定稿
+- 提供 1 分钟版、3 分钟版和展开重点
+
+### `05_project_followup_checklist.md`
+
+作用：
+
+- 收口项目面高频追问
+- 防止项目故事能讲主线，但一追问就散
+
+### `06_troubleshooting_qa_outline.md`
+
+作用：
+
+- 收口排障、Linux、网络、线上问题定位这条主线
+- 提供资深岗常见排障题的答题提纲
+
+### `07_engineering_quality_and_collaboration_outline.md`
+
+作用：
+
+- 收口工程质量、测试意识、发布回滚、跨团队协作这条表达线
+- 弥补当前计划里“提到过但没有稳定输出”的缺口
+
 ### `algorithms/`
 
 作用：
@@ -104,15 +150,22 @@ xiaomi_java_data_service/
 
 如果你是第一次进入这条主线，建议按下面顺序：
 
-1. 先看 `01_1month_plan.md`
-2. 再看 `00_high_frequency_knowledge_map.md`
-3. 如果要推进算法，进入：
+1. 先看 `02_merged_role_requirements_and_prep_focus.md`
+2. 再看 `03_gap_review_and_adjustments.md`
+3. 再看：
+   - `04_project_story_stable_draft.md`
+   - `05_project_followup_checklist.md`
+   - `06_troubleshooting_qa_outline.md`
+   - `07_engineering_quality_and_collaboration_outline.md`
+4. 再进入 `01_1month_plan.md`
+5. 然后看 `00_high_frequency_knowledge_map.md`
+6. 如果要推进算法，进入：
    - `algorithms/00_algorithm_roadmap.md`
    - `algorithms/90_1month_algorithm_plan.md`
-4. 然后进入 `reviews/README.md`
-5. 按周导航进入：
+7. 然后进入 `reviews/README.md`
+8. 按周导航进入：
    - `reviews/week1/hubs/00_week1_review_hub.md`
-6. 再进入当天对应的：
+9. 再进入当天对应的：
    - 专题正文
    - 每日复盘
 
@@ -128,4 +181,6 @@ xiaomi_java_data_service/
 
 这些应该继续放在：
 
-- `prepare/2026/workspace/`
+- `prepare/2026/profile/`
+- `prepare/2026/records/`
+- `prepare/common/templates/`

@@ -4,7 +4,8 @@
 
 - `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/00_high_frequency_knowledge_map.md`
-- `prepare/2026/workspace/00_interview_master.md`
+- `prepare/2026/profile/00_interview_master.md`
+- `prepare/2026/tracks/xiaomi_java_data_service/04_project_story_stable_draft.md`
 
 ## 1. 这一块在回答什么问题
 

@@ -129,6 +129,19 @@
   - `Week2-Week4` 的周目标和每日任务
 - 不回改 `Day1-Day6`，避免打断当前节奏
 
+### 基于岗位要求复核的补充结论
+
+本次结合 `03_gap_review_and_adjustments.md` 复核后，补充几个明确结论：
+
+- 当前主计划的大方向可以保留，不需要整体推翻
+- 真正需要前置的，不是更多知识点，而是：
+  - 项目表达
+  - 系统设计
+  - 排障 / Linux / 网络
+  - 工程质量 / 测试意识 / 协作表达
+- 从 Week2 开始，这几类内容不再只放到最后一周集中处理，而应每周至少安排 1 次输出或模拟
+- 算法主线当前主要风险不在专题数量，而在面试化验收和口头表达闭环，因此后续不再盲目扩专题
+
 ## 3. 准备优先级
 
 ### P0：必须拿稳
@@ -222,6 +235,8 @@
   - 框架链高频题答案草稿
   - RPC / 服务治理回答提纲
   - 1 版大数据链路组件分工对比表
+  - 1 版工程质量 / 测试意识 / 协作表达提纲
+  - 1 版排障 / Linux / 网络问答提纲
   - 1 版简历技术栈描述
   - 第 2 次 30-45 分钟技术模拟问答
 
@@ -240,6 +255,7 @@
   - 系统设计答题模板
   - 2 道数据服务 / 数据平台设计题的答题提纲
   - 1 版大数据开发高频题提纲
+  - 1 版项目故事主线和追问清单
   - 第 1 次系统设计 + 数据平台模拟
 
 ### 第 4 周：综合演练 + 项目表达 + 线上问题冲刺
@@ -253,6 +269,7 @@
 - 输出物：
   - 高频题最终版清单
   - 模拟面试复盘清单
+  - 2 个核心项目的 1 分钟版 / 3 分钟版 / 追问展开版
   - 面试前 3 天复习清单
 
 ## 5. 每周执行模板
@@ -579,7 +596,12 @@
 - 高频知识地图：`prepare/2026/tracks/xiaomi_java_data_service/00_high_frequency_knowledge_map.md`
 - 算法专项月计划：`prepare/2026/tracks/xiaomi_java_data_service/algorithms/90_1month_algorithm_plan.md`
 - 算法题目台账：`prepare/2026/tracks/xiaomi_java_data_service/algorithms/problem_ledger_and_dedup_index.md`
-- 周进展记录：`prepare/2026/workspace/01_weekly_progress.md`
-- 对话同步模板：`prepare/2026/workspace/02_chat_sync_template.md`
-- 模拟/真实面试复盘：`prepare/2026/workspace/03_interview_log.md`
-- 每日执行清单：`prepare/2026/workspace/04_daily_execution_checklist.md`
+- 岗位 gap review：`prepare/2026/tracks/xiaomi_java_data_service/03_gap_review_and_adjustments.md`
+- 项目故事稳定稿：`prepare/2026/tracks/xiaomi_java_data_service/04_project_story_stable_draft.md`
+- 项目追问清单：`prepare/2026/tracks/xiaomi_java_data_service/05_project_followup_checklist.md`
+- 排障问答提纲：`prepare/2026/tracks/xiaomi_java_data_service/06_troubleshooting_qa_outline.md`
+- 工程质量与协作提纲：`prepare/2026/tracks/xiaomi_java_data_service/07_engineering_quality_and_collaboration_outline.md`
+- 周进展记录：`prepare/2026/records/00_weekly_progress.md`
+- 对话同步模板：`prepare/common/templates/00_chat_sync_template.md`
+- 模拟/真实面试复盘：`prepare/2026/records/01_interview_log.md`
+- 每日执行清单：`prepare/2026/records/02_daily_execution_checklist.md`

@@ -3,7 +3,7 @@
 对应计划：
 
 - `prepare/2026/tracks/xiaomi_java_data_service/01_1month_plan.md`
-- `prepare/2026/workspace/00_interview_master.md`
+- `prepare/2026/profile/00_interview_master.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/00_system_design_methodology_and_distributed_basics_system_review.md`
 
 ## 1. 这一块在回答什么问题

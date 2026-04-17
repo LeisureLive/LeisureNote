@@ -1,0 +1,49 @@
+schema: spec-driven
+
+context: |
+  Project type:
+  - Personal repository for backend technical learning, knowledge accumulation, interview preparation, and coding practice
+  - Default response language is Chinese, keeping English technical terms where useful
+
+  Main directories:
+  - code/algorithm: Java Maven module for algorithm exercises and runnable examples
+  - code/bigdata: Java Maven module for big data related examples, currently using Hadoop 3.3.6 and JUnit 4.13.2
+  - code/java: supplementary Java practice area if relevant
+  - note/technical_points: topic-based technical knowledge notes
+  - note/problem_solving: troubleshooting notes and engineering experience summaries
+  - note/Java, note/ElasticSearch, note/ai: topic-specific study notes
+  - prepare/2026: interview preparation materials
+
+  Engineering preferences:
+  - Prefer minimal viable changes and avoid unrelated refactors
+  - Keep Maven module boundaries stable unless the change explicitly requires otherwise
+  - Do not upgrade dependency versions unless the change explicitly requires it
+  - Prefer maintainability, readability, rollback safety, and focused diffs
+  - For new or changed logic, explain the why, key constraints, or boundary handling when comments are needed
+  - When suitable, add minimal necessary tests instead of broad test expansion
+  - Do not modify local-only files such as .idea, target, or generated build artifacts unless explicitly required
+
+  Documentation preferences:
+  - Preserve existing Chinese meaning and author intent when editing notes
+  - Prefer structural cleanup, categorization, naming, and concise supplementation over heavy rewrites
+  - For version, dependency, config, and command-sensitive content, remind the user to verify against the current environment
+  - For interview preparation materials, prefer structured, review-friendly expression
+
+  Validation defaults:
+  - For algorithm module: cd code/algorithm && mvn test
+  - For bigdata module: cd code/bigdata && mvn test
+  - If tests or commands fail because of local environment or dependencies, report the failure reason and the unverified scope explicitly
+
+rules:
+  proposal:
+    - State the target directory or module explicitly and keep scope narrow
+    - Include why the change is needed, impact scope, and non-goals when relevant
+    - Call out risks and information gaps if requirements or environment details are uncertain
+  design:
+    - Prefer the smallest workable design that fits the existing repository structure
+    - Explain why the chosen approach is appropriate, plus key constraints, compatibility concerns, and rollback considerations when relevant
+    - Avoid proposing cross-module restructuring unless the user explicitly requests it
+  tasks:
+    - Break work into small executable steps with clear completion criteria
+    - Include implementation, verification, and documentation updates only when directly relevant
+    - Keep tasks scoped to the target files or directories and avoid incidental cleanup work

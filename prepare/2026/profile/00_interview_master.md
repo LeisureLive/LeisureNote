@@ -112,27 +112,58 @@
 - 项目名称：实时数据订阅 + 实时查询
 - 项目类型：基础数据平台 / 实时数据服务
 - 业务背景：为内部业务方提供实时数据消费与查询能力，支撑基础数据服务
-- 你的角色：开发者
-- 核心职责：数据处理模块、数据发送模块
-- 技术栈：Java、Kafka、Redis、MySQL、HTTP
+- 你的角色：后端开发者
+- 核心职责：
+  - 参与订阅元数据管理、数据处理和数据发送链路
+  - 参与流式发送作业、接收服务和下游投递链路相关开发
+  - 参与实时标签 / 画像 / 实时查询相关订阅链路的服务与作业维护
+- 技术栈：Java、Kafka、Flink、Redis、MySQL、gRPC、HTTP、HDFS、Pegasus
 - 最能体现价值的点：支持订阅方配置发送目标，可投递到订阅方自己的 Kafka；单机无带宽限制下发送性能可达 6w/s，并支持横向扩展
 - 最可能被追问的难点：数据处理依赖元数据，但元数据更新缺少通知机制，只能依赖缓存刷新，存在短暂不一致窗口
 
-补充待完善：
+补充信息：
 
-- 数据来源
-- 实时查询的数据存储与查询模型
-- 失败重试、监控告警、隔离策略
-- 更完整的架构链路和量级信息
+- 数据来源与上游链路：
+  - 用户属性数据来自数仓服务，先写入 Kudu，再通过 Kudu duplication 订阅出来，经处理后发送到订阅服务
+  - 其他类型数据来自导入流，导入流在处理并入库时分流发送到订阅服务
+- 实时查询的数据存储与查询模型：
+  - 查询侧使用 Pegasus Client
+  - 主要采用 `hashKey + sortKey + value` 的存储结构
+- 失败重试、监控告警、隔离策略：
+  - 重试主要依赖 Flink，整体保证 `at-least once`
+  - 各模块在处理时补了去重策略，尽量控制重复消费影响
+  - 监控告警主要依赖 Prometheus
+- 更完整的量级、峰值和扩容方式：
+  - 数据量级取决于导入链路量级
+  - 3 节点下峰值 QPS 接近 `2w/s`
+  - 主要通过提高 Flink job 并行度扩容
+  - 当前默认并行度为 3，单 task 的 `slotNum` 也配置为 3，因此默认只启动 1 个 taskManager
+- 发送链路的负责边界：
+  - 发送链路主要负责 sender 这一块，整体基本都有参与
+  - 重点主导的是 sender 缓存结构设计
+  - 重点优化了 sender 的发送攒批逻辑
+  - 补充了发送目标为自定义 Kafka 的场景，并支持开启认证
+- 代码仓库映射：
+  - `horizon-subscription`
+    - `subscription-server`：订阅配置、元数据和内部 RPC 服务
+    - `subscription-sender`：Flink 发送作业，消费 Kafka 流并做消息转换与下游投递
+    - `subscription-receiver`：gRPC 接收服务，负责接收数据并下发到订阅缓存 / 队列
+    - `subscription-scheduler`：订阅相关定时任务与指标补偿
+  - `sensors-hubble`
+    - `sensors-hubble-subscribe-server`：实时标签 / 画像订阅服务与 gRPC 接口
+    - `sensors-hubble-subscribe-stream-job`：Flink 流作业，消费 profile/item/tag 相关流并写入下游存储
 
 ### 项目 2
 
 - 项目名称：id-mapping
 - 项目类型：身份映射 / 数据处理服务
 - 业务背景：提供身份映射相关能力，服务历史业务逻辑并持续迭代新功能
-- 你的角色：开发者
-- 核心职责：待补充
-- 技术栈：Java、Redis、MySQL、Kafka（待补充）
+- 你的角色：后端开发者
+- 核心职责：
+  - 参与导入流 / 实时入流中的 id-mapping 处理链路
+  - 参与 identity engine、离线 remapping jobscheduler 和高性能 skv-proxy 相关能力演进
+  - 参与导入任务、批处理任务和 remapping 结果落地链路维护
+- 技术栈：Java、Kafka、MySQL、Flink、HTTP、Jetty、HDFS、SKV、Redis
 - 最能体现价值的点：通过引入高性能模式，抛弃部分低频功能，单机处理性能从 3k-4k/s 提升到 10k+/s，并支持横向扩展，摆脱对单点模块 `skv-proxy` 的依赖
 - 最可能被追问的难点：历史债务较多，新功能需要兼容旧逻辑；性能优化需要在功能完整性和处理性能之间做取舍
 
@@ -142,6 +173,17 @@
 - 更准确的技术栈
 - 高性能模式的关键设计
 - 最怕被追问的问题
+- 代码仓库映射：
+  - `horizon-inflow`
+    - `inflow-handlers`：入流处理链，包括 `IdMappingHandler`、`SubscribeDataHandler` 等核心 handler
+    - `inflow-chain`：实时链路、pipeline、worker 和 source/router 编排
+    - `inflow-importer`：批量导入 Flink 作业、批处理和 remapping 结果写回
+    - `inflow-web`：导入任务、调试与 RPC 服务入口
+  - `horizon-identity`
+    - `horizon-identity-engine-v2`：批量 ID mapping 处理、策略与持久化查询
+    - `horizon-identity-jobscheduler`：离线 remapping、修复与调度任务
+    - `horizon-identity-skv-proxy`：高性能 HTTP 服务，封装 SKV 读写、锁与本地缓存
+    - `horizon-identity-sink`：与 Infinity / SDW 侧的数据落地能力
 
 ### 项目 3
 
