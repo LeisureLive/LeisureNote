@@ -36,3 +36,24 @@ TBD - created by archiving change reorganize-prepare-and-review-track. Update Pu
 - **WHEN** 既有面试准备文档需要被移动、重命名或重新归类
 - **THEN** 变更结果中会明确保留文档语义，并说明迁移后的归属和目的
 
+### Requirement: reviews 目录必须明确 README、rules、templates 与 week 子目录的职责边界
+`prepare/2026/tracks/xiaomi_java_data_service/reviews/` 的内部结构 MUST 明确区分目录说明、写作规范、模板、周导航、专题正文和日复盘的职责，避免单个文件同时承担规则、正文、导航和复盘等多种角色。
+
+#### Scenario: 判断 reviews 内文件归属
+- **WHEN** 用户审视 `reviews/README.md`、`rules/`、`templates/`、`week*/hubs/`、`week*/topics/` 与 `week*/daily/`
+- **THEN** 能够明确判断每类文件分别负责目录说明、规范、模板、周导航、专题正文或日复盘，而不会把不同职责混写在同一层
+
+#### Scenario: 发现职责混淆
+- **WHEN** 某个 `hubs/` 或 `README.md` 文件开始承载大量专题正文，或某个 `topics/` 文档开始承担目录规则说明
+- **THEN** 结构审查输出会将其判定为职责边界问题，并指出应回归到哪个目录角色
+
+### Requirement: reviews 目录必须提供稳定的使用顺序与扩展方式
+`reviews/` 的入口说明和周导航 MUST 让用户能够理解推荐使用顺序，并在新增周目录或专题文档时继续沿用 `hubs / topics / daily` 的稳定结构，而不是临时混入新的同层角色。
+
+#### Scenario: 从 reviews 入口进入
+- **WHEN** 用户从 `prepare/2026/tracks/xiaomi_java_data_service/reviews/README.md` 进入复习体系
+- **THEN** 用户可以理解先看目录说明和规则，再进入周导航、专题正文和日复盘的推荐使用顺序
+
+#### Scenario: 扩展新的周次内容
+- **WHEN** 后续继续新增 Week 文档或调整现有周次内容
+- **THEN** 扩展方式仍然保持在 `week*/hubs/`、`week*/topics/`、`week*/daily/` 的边界内，并通过入口说明或周导航维持可追踪关系

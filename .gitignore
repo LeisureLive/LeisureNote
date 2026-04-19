@@ -17,3 +17,6 @@ out/
 *.tmp
 *.swp
 
+# OpenSpec runtime/generated files
+openspec/
+.codex/skills/openspec-*/
