@@ -10,9 +10,15 @@
 - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/05_realtime_query_system_design_and_multi_engine_selection_system_review.md`
 - `prepare/2026/tracks/xiaomi_java_data_service/reviews/week3/topics/08_project_architecture_upgrade_from_function_to_platform_system_review.md`
 
+使用前提：
+
+- 这篇文档是 Week4 的“项目复盘 / 表达专题”。
+- 它不替代 Week3 的技术专题正文，而是把你已经读过的系统设计、链路、平台化和项目材料重新组织成稳定叙事。
+- 如果你发现这里某个点讲不实、讲不深，优先回看对应的 Week3 技术专题，而不是只在这篇文档里继续补元表达。
+
 ## 1. 这一块在回答什么问题
 
-这一块真正要弄懂的，不是“项目介绍怎么背”，而是下面这条连续问题：
+这一块真正要弄懂的，不是“项目介绍怎么背”，而是项目为什么需要被复盘成一条稳定叙事，以及这条叙事应该承接哪些判断：
 
 1. 为什么很多项目明明做过不少事，面试里却只能讲成“我负责了某模块、做了几个优化点”。
 2. 为什么面试官听项目，真正想判断的不是你是否参与过，而是你是否理解业务背景、核心矛盾、关键取舍和结果影响。

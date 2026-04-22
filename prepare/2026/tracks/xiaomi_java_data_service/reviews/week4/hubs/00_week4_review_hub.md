@@ -16,6 +16,7 @@
 - Week4 的核心不是再扩新知识，而是把前 3 周的主线做综合收口，并把项目表达、系统设计、排障案例压成稳定输出。
 - 具体知识正文继续拆到 `topics/` 目录里；混合复习时优先回看 Week1-Week3 已有专题，不再重复造新总纲。
 - Week4 只对“当前还缺、且直接影响面试上限”的内容新增专题正文。
+- 其中 `topics/02_project_story_highlights_and_followups_system_review.md` 的角色是“项目复盘 / 表达专题”，它依赖 Week3 的技术专题，不替代技术机制正文。
 
 ## 2. 本周目标
 
@@ -57,13 +58,14 @@ Week4 的主线不是“再学一轮”，而是完成下面四件事：
 | 混合复习：存储 / 中间件 / 大数据开发 / 选型 | 回看 Week1、Week3 相关专题 | Day24 | 复用已有专题 |
 | 系统设计 + 项目表达二轮复盘 | 回看 Week3 相关专题 | Day25 | 复用已有专题 |
 | 故障排查与性能优化 | `topics/01_troubleshooting_performance_linux_network_system_review.md` | Day26 | 当前已补 |
-| 项目故事、亮点提炼与追问展开 | `topics/02_project_story_highlights_and_followups_system_review.md` | Day25-Day28 穿插 | 当前已补 |
+| 项目故事、亮点提炼与追问展开（项目复盘 / 表达专题） | `topics/02_project_story_highlights_and_followups_system_review.md` | Day25-Day28 穿插 | 当前已补 |
 | 全真模拟 / 查漏补缺 | 本文件 + 各专题自测清单 | Day27-Day28 | 按执行推进 |
 
 说明：
 
 - Week4 的重点是综合收口，所以 Day22-Day25 主要复用已补好的专题正文。
 - Week4 新增专题正文只保留真正缺口：故障排查与性能优化。
+- `topics/02_project_story_highlights_and_followups_system_review.md` 虽然放在 `topics/` 下，但它的作用是把已有技术理解组织成稳定项目叙事，不替代 Week3 的系统设计、平台化和链路专题。
 
 ## 4. 每日映射
 
@@ -135,6 +137,7 @@ Week4 的主线不是“再学一轮”，而是完成下面四件事：
   - 负责 Week4 导航、每日映射和达标标准。
 - `topics/*.md`：
   - 负责少量新增的专题正文，和前面几周专题的回看入口。
+  - 如果是项目复盘 / 表达专题，只负责组织已有理解，不替代前面几周的技术正文。
 - `daily/*.md`：
   - 仍然按需补，不预置。
   - 只有在模拟面试明显暴露出稳定薄弱点时，再补详细日复盘。
