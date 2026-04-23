@@ -47,6 +47,43 @@ package com.leisure.note.algorithm.week5.day29;
 public class GreedyQuestion2 {
 
   public int maxProfit(int[] prices) {
-    throw new UnsupportedOperationException("TODO: implement maxProfit");
+    // 本题定位：贪心 / 维护历史最优状态。
+    // 题型特征：只能交易一次，目标是“某天卖出时利润最大”，
+    // 所以每一天真正需要的历史信息只有一份：此前最低买入价。
+    // 贪心依据：
+    // 1. 如果未来打算在第 i 天卖出，那么最优买点一定是 0..i-1 中价格最低的那天。
+    // 2. 其他更高的历史价格都会被更低价格支配，不会带来更大利润。
+    // 状态定义：
+    // minPrice 表示“遍历到当前天之前，历史最低买入价”；
+    // maxProfit 表示“遍历到当前天时，能得到的最大利润”。
+    // 易错点：
+    // 1. 不要把这题写成完整 DP 数组，这题只需维护一个历史最优值。
+    // 2. 更顺的语义是“先算今天卖出的利润，再更新历史最低价”，
+    //    这样能清楚表达买入日必须在卖出日之前。
+    // 3. 如果一路下降，答案应为 0，不是负数。
+    if (prices == null || prices.length <= 1) {
+      return 0;
+    }
+
+    int minPrice = prices[0];
+    int maxProfit = 0;
+    for (int i = 1; i < prices.length; i++) {
+      // 先把今天当作卖出日，看看搭配历史最低价能赚多少。
+      maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+      // 再更新历史最低价，留给后面的天作为潜在买点。
+      if (prices[i] < minPrice) {
+        minPrice = prices[i];
+      }
+    }
+
+    return maxProfit;
+  }
+
+  public static void main(String[] args) {
+    GreedyQuestion2 greedyQuestion2 = new GreedyQuestion2();
+    System.out.println(greedyQuestion2.maxProfit(new int[]{1}));
+    System.out.println(greedyQuestion2.maxProfit(new int[]{7,1,5,3,6,4}));
+    System.out.println(greedyQuestion2.maxProfit(new int[]{7,6,4,3,1}));
+    System.out.println(greedyQuestion2.maxProfit(new int[]{1,2,3,4,5}));
   }
 }
