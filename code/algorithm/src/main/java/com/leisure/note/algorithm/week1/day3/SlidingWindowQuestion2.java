@@ -116,6 +116,7 @@ public class SlidingWindowQuestion2 {
     int sum = 0;
     int length = 0;
     while (j < nums.length) {
+      // 注意相比 day3 第一题，这里的右边界 j 每次都要扩张，因为 nums[j] 每次都被纳入了窗口
       sum += nums[j];
       j++;
       while (sum >= target) {

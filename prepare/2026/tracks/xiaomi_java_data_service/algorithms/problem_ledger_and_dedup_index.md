@@ -1,6 +1,6 @@
 # 算法已做题台账与去重索引
 
-最后更新：`2026-04-16`
+最后更新：`2026-04-25`
 
 ## 1. 这份文档解决什么问题
 
@@ -33,18 +33,18 @@
 
 | 专题 | 已完成 | 待做 / 复刷 | 当前说明 |
 | --- | --- | --- | --- |
-| 数组 | 5 | 0 | 双指针、滑动窗口、前后缀已有覆盖 |
-| 哈希表 | 7 | 1 | 补数查找、前缀和、分组归类和哈希统计已覆盖，剩余哈希 + 堆待补 |
-| 链表 | 4 | 1 | 原地反转、`dummy node` 拼接、快慢指针已覆盖，剩余堆结合链表待补 |
+| 数组 | 6 | 0 | 双指针、前后缀、基础滑动窗口和 Day31 连续 1 复习题已覆盖 |
+| 哈希表 | 8 | 0 | 补数查找、前缀和、分组归类、计数统计和哈希 + 堆已覆盖 |
+| 链表 | 5 | 0 | 原地反转、`dummy node` 拼接、快慢指针和堆结合链表已覆盖 |
 | 栈 / 队列 / 单调栈 | 4 | 0 | 基础栈、辅助状态栈、单调栈基础模板已覆盖 |
-| 字符串 | 3 | 3 | 已覆盖基础滑动窗口、分组归类和计数统计，模拟与窗口进阶待补 |
+| 字符串 | 6 | 0 | 已覆盖基础滑动窗口、模拟、固定长度窗口和复杂窗口题 |
 | 二分查找 | 3 | 0 | 已覆盖边界二分、变体二分、答案空间二分 |
 | 二叉树 / DFS / BFS | 8 | 0 | 已完成 BFS、基础 DFS、前中后序遍历、树递归和信息归并题 |
-| 堆 / 优先队列 | 0 | 3 | Week3 已预生成 TopK、哈希 + 堆、堆和链表结合题 |
-| 回溯 | 0 | 4 | Week4 已预生成模板题和剪枝 / 状态约束题 |
-| 图 | 0 | 4 | Week4 已预生成 DFS / BFS / 拓扑排序相关题 |
-| 动态规划 | 0 | 4 | Week4 已预生成入门模板和进阶高频题 |
-| 贪心 | 0 | 4 | Week5 已预生成压缩版高频代表题 |
+| 堆 / 优先队列 | 3 | 0 | TopK、哈希 + 堆和堆合并链表已覆盖 |
+| 回溯 | 4 | 0 | 模板题、剪枝回溯和状态约束题已覆盖 |
+| 图 | 4 | 0 | DFS / BFS、多源 BFS、拓扑排序和 BFS 扩展题已覆盖 |
+| 动态规划 | 4 | 0 | 入门模板、一维最值、完全背包和 LIS 已覆盖 |
+| 贪心 | 4 | 0 | 覆盖范围、最少跳数、历史最优和区间贪心已覆盖 |
 
 说明：
 
@@ -78,6 +78,37 @@
 | `496` | 下一个更大元素 I | 单调栈 | 最近更大元素 + 哈希映射 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day12/MonotonicStackQuestion2.java` |
 | `33` | 搜索旋转排序数组 | 二分查找 | 变体二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion1.java` |
 | `875` | 爱吃香蕉的珂珂 | 二分查找 | 答案空间二分 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week2/day13/BinarySearchQuestion2.java` |
+| `102` | 二叉树的层序遍历 | 二叉树 / BFS | BFS 模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeBfsQuestion1.java` |
+| `104` | 二叉树的最大深度 | 二叉树 / DFS | DFS 模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day15/TreeDfsQuestion1.java` |
+| `94` | 二叉树的中序遍历 | 二叉树 | 遍历模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeTraversalQuestion1.java` |
+| `144` | 二叉树的前序遍历 | 二叉树 | 遍历模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeTraversalQuestion2.java` |
+| `145` | 二叉树的后序遍历 | 二叉树 | 遍历模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeTraversalQuestion3.java` |
+| `226` | 翻转二叉树 | 二叉树 | 树递归基础 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day16/TreeRecursionQuestion1.java` |
+| `543` | 二叉树的直径 | 二叉树 / DFS | 后序 DFS | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day17/TreeDfsQuestion2.java` |
+| `236` | 二叉树的最近公共祖先 | 二叉树 | 递归信息归并 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day17/TreeRecursionQuestion2.java` |
+| `215` | 数组中的第 K 个最大元素 | 堆 | TopK 小顶堆 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day18/HeapQuestion1.java` |
+| `347` | 前 K 个高频元素 | 哈希表 / 堆 | 哈希统计 + 堆 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day18/HeapQuestion2.java` |
+| `23` | 合并 K 个升序链表 | 链表 / 堆 | 堆和链表结合 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day19/HeapLinkedListQuestion1.java` |
+| `415` | 字符串相加 | 字符串 | 从后往前模拟 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day19/StringSimulationQuestion1.java` |
+| `438` | 找到字符串中所有字母异位词 | 字符串 / 滑动窗口 | 固定长度窗口 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day20/StringWindowQuestion1.java` |
+| `76` | 最小覆盖子串 | 字符串 / 滑动窗口 | 复杂窗口题 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week3/day20/StringWindowQuestion2.java` |
+| `46` | 全排列 | 回溯 | 回溯模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day22/BacktrackingQuestion1.java` |
+| `78` | 子集 | 回溯 | 回溯树展开 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day22/BacktrackingQuestion2.java` |
+| `39` | 组合总和 | 回溯 | 剪枝回溯 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day23/BacktrackingQuestion3.java` |
+| `22` | 括号生成 | 回溯 | 状态约束回溯 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day23/BacktrackingQuestion4.java` |
+| `200` | 岛屿数量 | 图 | DFS / BFS | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day24/GraphTraversalQuestion1.java` |
+| `994` | 腐烂的橘子 | 图 | 多源 BFS | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day24/GraphTraversalQuestion2.java` |
+| `207` | 课程表 | 图 | 拓扑排序 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day25/GraphQuestion1.java` |
+| `127` | 单词接龙 | 图 | BFS 扩展 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day25/GraphQuestion2.java` |
+| `70` | 爬楼梯 | 动态规划 | DP 入门模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day26/DpQuestion1.java` |
+| `198` | 打家劫舍 | 动态规划 | 一维 DP | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day26/DpQuestion2.java` |
+| `322` | 零钱兑换 | 动态规划 | 完全背包 / DP 进阶 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion3.java` |
+| `300` | 最长递增子序列 | 动态规划 | DP 高频题 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion4.java` |
+| `55` | 跳跃游戏 | 贪心 | 覆盖范围 / 可达性 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion1.java` |
+| `121` | 买卖股票的最佳时机 | 贪心 | 历史最优状态 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion2.java` |
+| `45` | 跳跃游戏 II | 贪心 | 覆盖范围 / 最少跳数 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion1.java` |
+| `435` | 无重叠区间 | 贪心 | 区间选择 / 按结束排序 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion2.java` |
+| `485` | 最大连续 1 的个数 | 数组 / 滑动窗口 | 窗口内 0 个数约束 / 右开区间窗口复习 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day31/SlidingWindowReviewQuestion1.java` |
 
 ## 5. 当前阶段题目进度
 
@@ -115,18 +146,19 @@
 | Day22 | `78` | 子集 | 回溯 | 回溯树展开 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day22/BacktrackingQuestion2.java` |
 | Day23 | `39` | 组合总和 | 回溯 | 剪枝回溯 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day23/BacktrackingQuestion3.java` |
 | Day23 | `22` | 括号生成 | 回溯 | 状态约束回溯 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day23/BacktrackingQuestion4.java` |
-| Day24 | `200` | 岛屿数量 | 图 | DFS / BFS | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day24/GraphTraversalQuestion1.java` |
-| Day24 | `994` | 腐烂的橘子 | 图 | 多源 BFS | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day24/GraphTraversalQuestion2.java` |
-| Day25 | `207` | 课程表 | 图 | 拓扑排序 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day25/GraphQuestion1.java` |
-| Day25 | `127` | 单词接龙 | 图 | BFS 扩展 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day25/GraphQuestion2.java` |
-| Day26 | `70` | 爬楼梯 | 动态规划 | DP 入门模板 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day26/DpQuestion1.java` |
-| Day26 | `198` | 打家劫舍 | 动态规划 | 一维 DP | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day26/DpQuestion2.java` |
-| Day27 | `322` | 零钱兑换 | 动态规划 | 完全背包 / DP 进阶 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion3.java` |
-| Day27 | `300` | 最长递增子序列 | 动态规划 | DP 高频题 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion4.java` |
-| Day29 | `55` | 跳跃游戏 | 贪心 | 覆盖范围 / 可达性 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion1.java` |
-| Day29 | `121` | 买卖股票的最佳时机 | 贪心 | 历史最优状态 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion2.java` |
-| Day30 | `45` | 跳跃游戏 II | 贪心 | 覆盖范围 / 最少跳数 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion1.java` |
-| Day30 | `435` | 无重叠区间 | 贪心 | 区间选择 / 按结束排序 | 已初始化待做 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion2.java` |
+| Day24 | `200` | 岛屿数量 | 图 | DFS / BFS | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day24/GraphTraversalQuestion1.java` |
+| Day24 | `994` | 腐烂的橘子 | 图 | 多源 BFS | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day24/GraphTraversalQuestion2.java` |
+| Day25 | `207` | 课程表 | 图 | 拓扑排序 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day25/GraphQuestion1.java` |
+| Day25 | `127` | 单词接龙 | 图 | BFS 扩展 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day25/GraphQuestion2.java` |
+| Day26 | `70` | 爬楼梯 | 动态规划 | DP 入门模板 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day26/DpQuestion1.java` |
+| Day26 | `198` | 打家劫舍 | 动态规划 | 一维 DP | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day26/DpQuestion2.java` |
+| Day27 | `322` | 零钱兑换 | 动态规划 | 完全背包 / DP 进阶 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion3.java` |
+| Day27 | `300` | 最长递增子序列 | 动态规划 | DP 高频题 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week4/day27/DpQuestion4.java` |
+| Day29 | `55` | 跳跃游戏 | 贪心 | 覆盖范围 / 可达性 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion1.java` |
+| Day29 | `121` | 买卖股票的最佳时机 | 贪心 | 历史最优状态 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day29/GreedyQuestion2.java` |
+| Day30 | `45` | 跳跃游戏 II | 贪心 | 覆盖范围 / 最少跳数 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion1.java` |
+| Day30 | `435` | 无重叠区间 | 贪心 | 区间选择 / 按结束排序 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day30/GreedyQuestion2.java` |
+| Day31 | `485` | 最大连续 1 的个数 | 数组 / 滑动窗口 | 窗口内 0 个数约束 / 右开区间窗口复习 | 已完成 | `code/algorithm/src/main/java/com/leisure/note/algorithm/week5/day31/SlidingWindowReviewQuestion1.java` |
 
 ## 6. 已覆盖模式索引
 
@@ -158,16 +190,33 @@
 
 ### 6.2 滑动窗口
 
-- `变长窗口`
-  - 已覆盖题：`3`、`209`
+- `基础变长窗口`
+  - 已覆盖题：`3`、`209`、`485`
   - 已掌握内容：
     - 合法窗口定义
     - 何时扩张、何时收缩
+    - `[left, right]` 和 `[left, right)` 两种边界语义的区别
+    - 右边界是否已经入窗，决定了 `right` 能不能暂时不推进
   - 近期不优先再出：
-    - 另一个基础变长窗口模板题
+    - 另一个纯基础变长窗口模板题
   - 后续更适合补：
-    - `438` 固定长度窗口
-    - `76` 复杂窗口题
+    - 带最多 `k` 次容错的窗口题，例如 `1004`
+
+- `固定长度窗口`
+  - 已覆盖题：`438`
+  - 已掌握内容：
+    - 固定窗口大小时，进入 / 离开窗口的更新顺序
+    - 频次统计和窗口匹配判断
+  - 近期不优先再出：
+    - 纯同构的基础固定窗口题
+
+- `复杂窗口`
+  - 已覆盖题：`76`
+  - 已掌握内容：
+    - 先满足覆盖条件，再尽量收缩窗口
+    - 多状态计数和“何时窗口重新不合法”的判断
+  - 近期不优先再出：
+    - 纯同构的最小覆盖类窗口题
 
 ### 6.3 前后缀 / 前缀和
 
