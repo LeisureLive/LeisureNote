@@ -114,18 +114,18 @@ public class SlidingWindowQuestion1 {
       return s.length();
     }
     Set<Character> set = new HashSet<>();
-    int i = 0;
-    int j = 0;
+    int left = 0;
+    int right = 0;
     int longestLength = 0;
-    while (j <= s.length() - 1) {
-      if (!set.contains(s.charAt(j))) {
-        set.add(s.charAt(j));
-        j++;
-        longestLength = Math.max(longestLength, j - i);
-      } else {
-        set.remove(s.charAt(i));
-        i++;
+    while (right < s.length()) {
+      while (set.contains(s.charAt(right))) {
+        set.remove(s.charAt(left));
+        left++;
       }
+
+      set.add(s.charAt(right));
+      right++;
+      longestLength = Math.max(longestLength, right - left);
     }
     return longestLength;
   }

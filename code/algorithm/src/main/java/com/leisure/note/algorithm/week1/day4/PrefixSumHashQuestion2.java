@@ -114,28 +114,33 @@ public class PrefixSumHashQuestion2 {
    * </ul>
    */
   public int findMaxLength(int[] nums) {
-    if (nums == null || nums.length == 0) {
+    if (nums == null) {
       return 0;
     }
 
+    if (nums.length <= 1) {
+      return 0;
+    }
+
+    // 前缀和为 N -> 第一个位置
+    Map<Integer, Integer> map = new HashMap<>();
+    map.put(0, 0);
     int prefixSum = 0;
-    int maxLength = 0;
-    Map<Integer, Integer> prefixSumMap = new HashMap<>();
-    prefixSumMap.put(0, -1);
-    for (int i = 0; i < nums.length; i++) {
-      if (nums[i] == 0) {
+    int max = 0;
+    for (int i = 1; i <= nums.length; i++) {
+      if (nums[i - 1] == 0) {
         prefixSum += -1;
       } else {
         prefixSum += 1;
       }
-
-      if (prefixSumMap.get(prefixSum) != null) {
-        maxLength = Math.max(maxLength, i - prefixSumMap.get(prefixSum));
+      if (!map.containsKey(prefixSum)) {
+        map.put(prefixSum, i);
       } else {
-        prefixSumMap.put(prefixSum, i);
+        max = Math.max(max, i - map.get(prefixSum));
       }
     }
-    return maxLength;
+
+    return max;
   }
 
   public static void main(String[] args) {
