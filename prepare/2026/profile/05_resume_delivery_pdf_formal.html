@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>何杰-后端开发工程师-简历-正式版</title>
+  <style>
+    :root {
+      --text: #111827;
+      --muted: #1f2937;
+      --soft: #374151;
+      --line: #334155;
+      --panel: #f8fafc;
+      --accent: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: var(--text);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+      line-height: 1.56;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 12mm 12mm 10mm;
+      background: #ffffff;
+    }
+
+    .header {
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      break-inside: avoid;
+    }
+
+    .header-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 12px;
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .name {
+      margin: 0;
+      font-size: 29px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+
+    .role {
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0.96;
+    }
+
+    .header-body {
+      padding: 10px 12px 11px;
+      background: #ffffff;
+    }
+
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 15px;
+    }
+
+    .section-title {
+      margin: 0 0 9px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .section-title::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .section-box {
+      border: 1.4px solid #94a3b8;
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 10px 11px;
+    }
+
+    .summary-list,
+    .skill-list,
+    .detail-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin: 4px 0;
+      font-size: 12.8px;
+    }
+
+    .entry {
+      margin-top: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: var(--panel);
+      overflow: hidden;
+      break-inside: avoid;
+    }
+
+    .entry:first-child {
+      margin-top: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      padding: 9px 10px;
+      background: #e2e8f0;
+      border-bottom: 1px solid #cbd5e1;
+    }
+
+    .entry-title {
+      margin: 0;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .entry-time {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--soft);
+      white-space: nowrap;
+    }
+
+    .entry-body {
+      padding: 9px 10px 10px;
+      background: #ffffff;
+    }
+
+    .mini-label {
+      display: inline-block;
+      margin: 5px 0 3px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding-left: 6px;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      .page {
+        width: auto;
+        min-height: auto;
+        padding: 10mm 10mm 8mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="header-banner">
+        <div>
+          <h1 class="name">何杰</h1>
+          <div class="role">后端开发工程师</div>
+        </div>
+      </div>
+      <div class="header-body">
+        <div class="info-row">本科 / 哈尔滨工程大学 / 计算机科学与技术专业 ｜ 工作年限：10 年 ｜ 所在城市：武汉</div>
+        <div class="info-row" style="margin-top: 6px;">手机：15117907017 ｜ 邮箱：enjoyleisure8027@163.com</div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">个人简介</h2>
+      <div class="section-box">
+        <ul class="summary-list">
+          <li>10 年后端开发经验，近 7 年主要从事数据平台和运营支撑平台相关研发工作</li>
+          <li>在数据服务、运营活动、营销风控、报表支撑等平台型系统开发方面经验比较丰富</li>
+          <li>有复杂链路功能迭代和长期维护经验，在性能优化、稳定性问题处理和线上排查方面有较多实践</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">技能清单</h2>
+      <div class="section-box">
+        <ul class="skill-list">
+          <li>熟练掌握 Java 语言，熟悉常用设计模式、多线程编程、JVM 调优等技术</li>
+          <li>熟悉 Spring Boot、Spring MVC、MyBatis 等后端开发常用框架</li>
+          <li>熟悉 MySQL、Redis、Kafka 等常用中间件，有较多相关问题处理和系统调优经验</li>
+          <li>熟悉 Linux 操作系统，熟练使用 Flink、Hive、Impala、Pegasus 等大数据处理链路相关技术</li>
+          <li>有高性能、高并发系统相关设计和优化实践</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">工作经历</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">神策网络科技有限公司 | 后端研发工程师</h3>
+          <p class="entry-time">2021.06 - 至今</p>
+        </div>
+        <div class="entry-body">
+          <ul class="detail-list">
+            <li>负责基础数据平台相关功能开发，主要覆盖数据导入、身份映射、实时订阅和实时查询等方向</li>
+            <li>负责平台日常维护和问题处理，支持业务方的数据接入、数据使用和相关需求交付</li>
+            <li>负责部分链路优化、监控告警和稳定性保障工作，配合平台持续迭代和维护</li>
+            <li>负责数据导入链路性能测试和验证工作</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">高途课堂 | 高级 Java 工程师</h3>
+          <p class="entry-time">2019.08 - 2021.06</p>
+        </div>
+        <div class="entry-body">
+          <ul class="detail-list">
+            <li>负责部门内可视化数据平台相关功能开发，支持营销业务监控和运营数据反馈</li>
+            <li>负责通用化运营活动管理平台开发，支持微信私域各场景营销活动配置和效果管理</li>
+            <li>负责营销活动风控平台的功能开发和日常维护，支持活动质量控制和异常处理</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">出门问问 | Java 工程师</h3>
+          <p class="entry-time">2017.09 - 2019.08</p>
+        </div>
+        <div class="entry-body">
+          <ul class="detail-list">
+            <li>负责 Google WearOS 中国版应用商店后端功能开发、重构和日常维护</li>
+            <li>负责短信、邮件、推送等基础服务的功能开发和日常维护</li>
+            <li>参与用户与数据中台相关后端开发工作，支持相关业务功能迭代</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">航天信息股份有限公司 | 软件开发工程师</h3>
+          <p class="entry-time">2016.07 - 2017.09</p>
+        </div>
+        <div class="entry-body">
+          <ul class="detail-list">
+            <li>负责电子发票平台相关后端开发工作</li>
+            <li>负责电子发票数据存储和查询相关功能开发与优化</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">项目经历</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">实时数据订阅与实时查询 | 神策网络科技有限公司</h3>
+          <p class="entry-time">2021 - 2023</p>
+        </div>
+        <div class="entry-body">
+          <div class="mini-label">项目背景</div>
+          <ul class="detail-list">
+            <li>客户系统需要订阅平台实时上报的数据，用于自定义分析和业务使用</li>
+            <li>内部营销业务需要实时获取用户属性、事件、分群等数据，支撑触达和运营</li>
+          </ul>
+          <div class="mini-label">职责与结果</div>
+          <ul class="detail-list">
+            <li>负责实时订阅能力开发，参与数据处理、数据投递和监控告警等链路建设</li>
+            <li>参与实时查询能力建设，基于实时数据订阅和历史数据拉取，提供高性能、高并发的查询能力</li>
+            <li>负责数据投递链路优化，完成缓存结构和批量发送逻辑改造，并支持自定义 Kafka 投递及认证</li>
+            <li>实时订阅链路单机 QPS 6w/s，3 节点峰值 QPS 接近 20w/s，并支持横向扩展</li>
+            <li>实时查询链路单机查询 QPS 2w+，TP90 15ms，TP99 50ms</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">数据导入与 id-mapping | 神策网络科技有限公司</h3>
+          <p class="entry-time">2023 - 至今</p>
+        </div>
+        <div class="entry-body">
+          <div class="mini-label">项目背景</div>
+          <ul class="detail-list">
+            <li>面向客户提供多源数据导入、清洗、校验、解析、身份映射和入库存储能力，支持流导入和批导入两类模式</li>
+          </ul>
+          <div class="mini-label">职责与结果</div>
+          <ul class="detail-list">
+            <li>负责数据导入链路和身份映射相关功能开发，参与实时链路维护、性能优化和稳定性保障工作</li>
+            <li>搭建性能测试自动化工具，形成从造数、上报、入库统计到链路耗时和 QPS 监控的完整验证流程</li>
+            <li>参与性能优化，围绕高频主路径调整处理链路和数据模型，减少链路开销和单点依赖</li>
+            <li>服务 1000+ 客户，单机处理性能从 3k-4k/s 提升到 10k+/s，并支持横向扩展</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">运营计划管理 | 高途课堂</h3>
+          <p class="entry-time">2020.11 - 2021.06</p>
+        </div>
+        <div class="entry-body">
+          <div class="mini-label">项目背景</div>
+          <ul class="detail-list">
+            <li>面向微信私域各场景的营销业务，需要提供通用化的运营配置能力，支持运营人员快速配置运营计划并查看不同运营动作效果</li>
+          </ul>
+          <div class="mini-label">职责与结果</div>
+          <ul class="detail-list">
+            <li>负责运营配置平台相关功能开发，支持微信私域各场景营销业务配置和效果分析</li>
+            <li>参与用户标识打通相关能力建设，支持不同场景下用户身份关联和运营追踪</li>
+            <li>用户 id 标识打通总量达到 3000 万+，经验证准确率 98% 以上，成为跨场景营销业务的重要基础能力</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

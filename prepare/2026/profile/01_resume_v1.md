@@ -18,13 +18,13 @@
 ## 2. 个人优势
 
 1. 10 年 Java 后端研发经验，近 5 年持续深耕基础数据平台、数据服务与流式处理场景。
-2. 具备实时数据订阅、数据导入、身份映射、性能测试自动化、稳定性治理与线上问题排查经验。
+2. 具备实时数据订阅、数据导入、身份映射、性能测试、稳定性治理与线上问题排查经验。
 3. 熟悉 Java、Flink、Kafka、MySQL、Redis、Pegasus、gRPC、Linux 等技术栈，能够独立推进高吞吐链路优化与平台能力演进。
 
 ## 3. 技术栈
 
-- 语言与基础：Java
-- 后端开发：Spring Boot、Spring MVC、MyBatis、gRPC、HTTP
+- 语言与基础：Java、Python
+- 后端开发：Spring Boot、Spring MVC、SpringJDBC、MyBatis、gRPC、HTTP
 - 数据与中间件：MySQL、Redis、Kafka、Pegasus、Hive、Impala
 - 大数据与流处理：Flink
 - 监控与运维：Prometheus、Nginx、Linux

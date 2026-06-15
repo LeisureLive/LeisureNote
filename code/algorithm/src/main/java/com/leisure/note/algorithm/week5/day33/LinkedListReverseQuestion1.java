@@ -94,6 +94,7 @@ public class LinkedListReverseQuestion1 {
       if (count == right) {
         secondTail = cur;
         thirdHead = cur.next;
+        break;
       }
 
       count++;

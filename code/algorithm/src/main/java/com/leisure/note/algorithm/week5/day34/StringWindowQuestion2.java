@@ -238,6 +238,52 @@ public class StringWindowQuestion2 {
   }
 
   /**
+   * 424. 替换后的最长重复字符
+   *
+   * <p>历史 {@code maxFreq} 版本。
+   *
+   * <p>这版不再每轮扫描窗口频次表，而是只维护一个“历史上窗口内某字符出现过的最大次数”
+   * {@code maxFreq}，从而把整题收口为更标准的 {@code O(n)} 滑动窗口。
+   *
+   * <p>实现要点：
+   *
+   * <ul>
+   * <li>{@code maxFreq} 只在右边扩窗时更新，不在左边缩窗时回退。</li>
+   * <li>窗口是否需要收缩，仍然通过 {@code windowLen - maxFreq > k} 判断。</li>
+   * <li>这里的 {@code maxFreq} 可能比“当前窗口真实最大频次”更大，但它只会让窗口收缩稍晚，不会让最终答案变大到错误值。</li>
+   * </ul>
+   */
+  public int characterReplacement2(String s, int k) {
+    if (s == null || s.length() == 0) {
+      return 0;
+    }
+
+    int[] count = new int[26];
+    int left = 0;
+    int maxFreq = 0;
+    int maxLen = 0;
+    for (int right = 0; right < s.length(); right++) {
+      int idx = s.charAt(right) - 'A';
+      count[idx]++;
+
+      // maxFreq 记录的是“历史上这个窗口体系里出现过的最大频次”，只增不减。
+      maxFreq = Math.max(maxFreq, count[idx]);
+
+      // 如果除最高频字符外，其余字符数量已经超过 k，说明当前窗口一定无法通过最多 k 次替换变成全相同字符。
+      while (right - left + 1 - maxFreq > k) {
+        count[s.charAt(left) - 'A']--;
+        left++;
+      }
+
+      // 这里即使 maxFreq 偶尔偏大，也只会让窗口收缩稍晚；
+      // 想让答案继续变大，必须真的出现更高的频次把 maxFreq 顶上去，因此最终 maxLen 不会被错误放大。
+      maxLen = Math.max(maxLen, right - left + 1);
+    }
+
+    return maxLen;
+  }
+
+  /**
    * 30. 串联所有单词的子串
    *
    * <p>题目描述：

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Day31 滑动窗口复习题。
+ * Day31 数组滑动窗口复习题。
  *
  * <p>这组题是结合 `01_arrays.md` 里 `3.3 滑动窗口` 的分类补出来的，
  * 目标不是继续堆同构题，而是把几种最常见的窗口思路并排放在一起对照：
@@ -28,7 +28,7 @@ import java.util.Map;
  *
  * <p>这份复习默认统一采用右开区间 {@code [left, right)}，方便把几类模板统一起来。
  */
-public class SlidingWindowReviewQuestion1 {
+public class ArrayQuestion3 {
 
   /**
    * 485. 最大连续 1 的个数
@@ -424,11 +424,11 @@ public class SlidingWindowReviewQuestion1 {
   }
 
   public static void main(String[] args) {
-    SlidingWindowReviewQuestion1 slidingWindowReviewQuestion1 = new SlidingWindowReviewQuestion1();
-//    System.out.println(slidingWindowReviewQuestion1.findMaxConsecutiveOnes(new int[] {1, 0, 1, 1, 0, 1}));
-//    System.out.println(slidingWindowReviewQuestion1.findMaxAverage(new int[] {1, 12, -5, -6, 50, 3}, 4));
-//    System.out.println(slidingWindowReviewQuestion1.totalFruit(new int[] {1, 2, 1}));
-    System.out.println(slidingWindowReviewQuestion1.longestOnes(new int[] {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2));
-//    System.out.println(slidingWindowReviewQuestion1.numSubarrayProductLessThanK(new int[] {10, 5, 2, 6}, 100));
+    ArrayQuestion3 arrayQuestion3 = new ArrayQuestion3();
+//    System.out.println(arrayQuestion3.findMaxConsecutiveOnes(new int[] {1, 0, 1, 1, 0, 1}));
+//    System.out.println(arrayQuestion3.findMaxAverage(new int[] {1, 12, -5, -6, 50, 3}, 4));
+//    System.out.println(arrayQuestion3.totalFruit(new int[] {1, 2, 1}));
+    System.out.println(arrayQuestion3.longestOnes(new int[] {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2));
+//    System.out.println(arrayQuestion3.numSubarrayProductLessThanK(new int[] {10, 5, 2, 6}, 100));
   }
 }

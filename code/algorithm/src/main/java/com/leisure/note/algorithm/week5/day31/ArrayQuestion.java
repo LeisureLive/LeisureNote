@@ -24,6 +24,7 @@ import java.util.List;
  * <li>{@code 88. 合并两个有序数组}</li>
  * <li>{@code 54. 螺旋矩阵}</li>
  * <li>{@code 59. 螺旋矩阵 II}</li>
+ * <li>{@code 2326. 螺旋矩阵 IV}</li>
  * </ul>
  *
  * @author jie.he
@@ -231,6 +232,120 @@ public class ArrayQuestion {
     return res;
   }
 
+  /**
+   * 2326. 螺旋矩阵 IV
+   *
+   * <p>题目描述：
+   *
+   * <p>给你两个整数 {@code m} 和 {@code n}，以及一个链表的头节点 {@code head}。
+   *
+   * <p>请你生成一个大小为 {@code m x n} 的矩阵，并按照顺时针螺旋顺序，
+   * 用链表中的节点值依次填充矩阵。
+   *
+   * <p>如果链表中的节点数目小于 {@code m * n}，则将矩阵中剩余没有填到的位置全部设为 {@code -1}。
+   *
+   * <p>方法签名：
+   *
+   * <pre>
+   * public int[][] spiralMatrix(int m, int n, ListNode head)
+   * </pre>
+   *
+   * <p>示例 1：
+   *
+   * <pre>
+   * 输入：m = 3, n = 5, head = [3,0,2,6,8,1,7,9,4,2,5,5,0]
+   * 输出：[[3,0,2,6,8],[5,0,-1,-1,1],[5,2,4,9,7]]
+   * </pre>
+   *
+   * <p>示例 2：
+   *
+   * <pre>
+   * 输入：m = 1, n = 4, head = [0,1,2]
+   * 输出：[[0,1,2,-1]]
+   * </pre>
+   *
+   * <p>额外要求：
+   *
+   * <ul>
+   * <li>目标时间复杂度为 {@code O(m * n)}</li>
+   * <li>允许使用额外空间辅助判断访问状态</li>
+   * <li>需要保证每个位置最多填充一次，转向时不能越界也不能重复访问</li>
+   * </ul>
+   *
+   * <p>本题在专题中的定位：
+   *
+   * <ul>
+   * <li>数组专题：遍历与模拟</li>
+   * <li>特征：答案矩阵是固定大小，填充顺序由“方向数组 + 是否需要转向”共同决定</li>
+   * </ul>
+   *
+   * <p>答题顺序建议：
+   *
+   * <ol>
+   * <li>先确认矩阵初始化值是 {@code -1}，因为链表可能提前结束。</li>
+   * <li>再确认当前题的核心不是链表操作，而是“螺旋顺序填充 + 转向判断”。</li>
+   * <li>先说清什么时候继续直走、什么时候顺时针切换方向，再写循环。</li>
+   * <li>最后检查单行、单列、链表长度不足、刚好填满这几类边界。</li>
+   * </ol>
+   */
+  public int[][] spiralMatrix(int m, int n, ListNode head) {
+    if (m <= 0 || n <= 0) {
+      return new int[0][0];
+    }
+
+    int[][] ans = new int[m][n];
+    for (int row = 0; row < ans.length; row++) {
+      // 先全部填成 -1，链表提前结束时剩余位置天然符合题意。
+      Arrays.fill(ans[row], -1);
+    }
+
+    if (head == null) {
+      return ans;
+    }
+
+    boolean[][] visited = new boolean[m][n];
+    int[][] dirs = new int[][] {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    ListNode cur = head;
+    int dirIndex = 0;
+    int row = 0;
+    int col = 0;
+    while (cur != null) {
+      ans[row][col] = cur.val;
+      visited[row][col] = true;
+      cur = cur.next;
+
+      int nextRow = row + dirs[dirIndex][0];
+      int nextCol = col + dirs[dirIndex][1];
+      // 下一个位置越界，或者已经访问过，就需要顺时针转向。
+      if (nextRow < 0 || nextRow >= m || nextCol < 0 || nextCol >= n || visited[nextRow][nextCol]) {
+        dirIndex = (dirIndex + 1) % 4;
+      }
+
+      row += dirs[dirIndex][0];
+      col += dirs[dirIndex][1];
+    }
+
+    return ans;
+  }
+
+  public static class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+      this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+      this.val = val;
+      this.next = next;
+    }
+  }
+
+
 
   public static void main(String[] args) {
     ArrayQuestion arrayQuestion = new ArrayQuestion();
@@ -239,7 +354,7 @@ public class ArrayQuestion {
 //    arrayQuestion.merge(nums1, 3, nums2, 3);
 //    System.out.println(Arrays.toString(nums1));
 
-    int[][] matrix = new int[][] {{1},{2},{3},{4}};
+    int[][] matrix = new int[][] {{1}, {2}, {3}, {4}};
     System.out.println(arrayQuestion.spiralOrder(matrix));
 
 //    int[][] ans = arrayQuestion.generateMatrix(3);

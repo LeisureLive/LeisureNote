@@ -4,7 +4,9 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Day31 数组双指针复习题。
@@ -22,6 +24,7 @@ import java.util.List;
  *
  * <ul>
  * <li>原地去重：{@code 26. 删除有序数组中的重复项}</li>
+ * <li>限次去重：{@code 80. 删除有序数组中的重复项 II}</li>
  * <li>原地删除：{@code 27. 移除元素}</li>
  * <li>稳定搬移：{@code 283. 移动零}</li>
  * <li>双指针进阶：{@code 42. 接雨水}</li>
@@ -126,6 +129,95 @@ public class ArrayQuestion2 {
   }
 
   /**
+   * 80. 删除有序数组中的重复项 II
+   *
+   * <p>题目描述：
+   *
+   * <p>给你一个有序数组 {@code nums}，请你原地删除重复出现的元素，使得每个元素最多只出现两次，
+   * 返回删除后数组的新长度。
+   *
+   * <p>不要使用额外的数组空间，你必须在原地修改输入数组，并在使用 {@code O(1)} 额外空间的条件下完成。
+   *
+   * <p>方法签名：
+   *
+   * <pre>
+   * public int removeDuplicates(int[] nums)
+   * </pre>
+   *
+   * <p>说明：
+   *
+   * <p>本地复习文件中为了和 {@code 26. 删除有序数组中的重复项} 共存在同一个类里，
+   * 这里将实现方法命名为 {@code removeDuplicates2}，但 LeetCode 提交时仍使用题目原始签名。
+   *
+   * <p>示例 1：
+   *
+   * <pre>
+   * 输入：nums = [1,1,1,2,2,3]
+   * 输出：5, nums = [1,1,2,2,3,_]
+   * </pre>
+   *
+   * <p>示例 2：
+   *
+   * <pre>
+   * 输入：nums = [0,0,1,1,1,1,2,3,3]
+   * 输出：7, nums = [0,0,1,1,2,3,3,_,_]
+   * </pre>
+   *
+   * <p>额外要求：
+   *
+   * <ul>
+   * <li>目标时间复杂度为 {@code O(n)}</li>
+   * <li>目标额外空间复杂度为 {@code O(1)}</li>
+   * <li>必须原地修改，且保留数组前缀中的相对顺序</li>
+   * </ul>
+   *
+   * <p>专题定位：
+   *
+   * <ul>
+   * <li>数组专题：快慢指针原地覆盖</li>
+   * <li>特征：和 26 的区别不是“是否去重”，而是“每个值允许保留到几次”</li>
+   * </ul>
+   *
+   * <p>回顾重点：
+   *
+   * <ul>
+   * <li>{@code right} 负责扫描整个有序数组，{@code left} 负责维护保留结果的尾部</li>
+   * <li>{@code showTime} 记录当前这段重复值已经保留了几次，超过 2 次就跳过</li>
+   * <li>一旦遇到新值，要同步做两件事：写入新值，并把计数重置为 1</li>
+   * </ul>
+   */
+  public int removeDuplicates2(int[] nums) {
+    if (nums == null || nums.length == 0) {
+      return 0;
+    }
+    if (nums.length == 1) {
+      return 1;
+    }
+
+    int showTime = 1;
+    int left = 0;
+    int right = 1;
+    while (right < nums.length) {
+      if (nums[right] != nums[left]) {
+        // 遇到新值时，直接接到结果尾部，并重置当前值的保留次数。
+        nums[++left] = nums[right++];
+        showTime = 1;
+      } else {
+        if (showTime < 2) {
+          // 当前值还没达到“最多保留两次”的上限，可以继续写入。
+          showTime++;
+          nums[++left] = nums[right++];
+        } else {
+          // 已经保留了两次，后续重复值直接跳过，只移动扫描指针。
+          right++;
+        }
+      }
+    }
+
+    return left + 1;
+  }
+
+  /**
    * 27. 移除元素
    *
    * <p>题目描述：
@@ -182,10 +274,6 @@ public class ArrayQuestion2 {
   public int removeElement(int[] nums, int val) {
     if (nums == null || nums.length == 0) {
       return 0;
-    }
-
-    if (nums.length == 1) {
-      return nums[0] == val ? 0 : 1;
     }
 
     int fast = 0;
@@ -424,7 +512,7 @@ public class ArrayQuestion2 {
 //    arrayQuestion2.moveZeroes(nums);
 //    System.out.println(Arrays.toString(nums));
 
-    System.out.println(arrayQuestion2.trap(new int[] {0,1,0,2,1,0,1,3,2,1,2,1}));
+    System.out.println(arrayQuestion2.trap(new int[] {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
     System.out.println(arrayQuestion2.trap2(new int[] {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
   }
 }
